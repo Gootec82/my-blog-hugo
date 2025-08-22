@@ -1,0 +1,74 @@
+{{ define "main" }}
+{{ if eq .RelPermalink "/categories/" }}
+<div class="categories-list">
+    {{ range $.Site.Taxonomies.categories.ByCount }}
+    <a href="/categories/{{ .Name }}" class="category-item">
+        <h2>{{ .Name }} <small>({{ .Count }})</small></h2>
+    </a>
+    {{ end }}
+</div>
+{{ else }}
+<div class="list">
+    {{ range .Paginator.Pages }}
+    {{ $page := . }} <!-- Store page context in variable -->
+    <div class="listItem">
+        <a href="{{ .Permalink }}" class="listItemImageLink">
+            {{ with .Params.image }}
+            <img src="{{ . }}" alt="{{ $page.Title }}" class="listItemImage" loading="lazy" width="300" height="200">
+            {{ else }}
+            <div class="listItemImage placeholder"></div>
+            {{ end }}
+        </a>
+
+        <div class="listItemText">
+            <h1 class="listItemTitle">
+                <a href="{{ .Permalink }}">{{ .Title }}</a>
+            </h1>
+
+            {{ with .Description }}
+            <p class="listItemDesc">{{ . }}</p>
+            {{ else }}
+            <p class="listItemDesc">{{ .Summary | truncate 150 }}</p>
+            {{ end }}
+
+            <div class="listItemDetail">
+                {{ with .Params.avatar }}
+                <img src="{{ . }}" loading="lazy" alt="Author" class="listItemAvatar" width="24" height="24">
+                {{ end }}
+
+                {{ with .Params.author }}
+                <span class="listItemAuthor">{{ . }}</span>
+                {{ else }}
+                {{ range (.GetTerms "authors") }}
+                <a href="{{ .Permalink }}" class="listItemAuthor">{{ .Name }}</a>
+                {{ end }}
+                {{ end }}
+
+                <time datetime="{{ .Date.Format " 2006-01-02" }}" class="listItemDate">
+                    {{ .Date.Format "Jan 2, 2006" }}
+                </time>
+            </div>
+
+            <div class="listItemCategories">
+                {{ range (.GetTerms "categories") }}
+                <a class="listItemCategory" href="{{ .Permalink }}">{{ .Name }}</a>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+    {{ end }}
+</div>
+
+{{ if gt .Paginator.TotalPages 1 }}
+<nav class="pagination">
+    {{ if .Paginator.HasPrev }}
+    <a href="{{ .Paginator.Prev.URL }}" class="pagination-prev">&laquo; Newer</a>
+    {{ end }}
+    <span class="pagination-page">Page {{ .Paginator.PageNumber }}</span>
+    {{ if .Paginator.HasNext }}
+    <a href="{{ .Paginator.Next.URL }}" class="pagination-next">Older &raquo;</a>
+    {{ end }}
+</nav>
+{{ end }}
+{{ end }}
+{{ end }}

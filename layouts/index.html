@@ -1,0 +1,150 @@
+﻿{{ define "main" }}
+<link rel="stylesheet" href="/css/home.css">
+
+<div class="container home-grid">
+
+    <!-- Main Content Area -->
+    <main>
+
+        <!-- Hero Section -->
+        <section class="singleHead">
+            <div class="singleHeadTexts">
+                <h1 class="singleHeadTitle">{{ .Site.Title }}</h1>
+                <p class="singleHeadDesc">{{ .Site.Params.description }}</p>
+            </div>
+        </section>
+
+        <!-- Recent Posts (Paginated) -->
+        <section class="section recent-posts">
+            <h2 class="section-title">Recent Posts</h2>
+
+            {{/* Gather pages robustly (by section or by type) */}}
+            {{ $mainSections := .Site.Params.mainSections | default (slice "posts" "post") }}
+            {{ $bySection := where .Site.RegularPages "Section" "in" $mainSections }}
+            {{ $byType := where .Site.RegularPages "Type" "in" (slice "post" "posts") }}
+            {{ $pages := union $bySection $byType }}
+            {{ $pages = sort $pages "Date" "desc" }}
+            {{ $paginator := .Paginate $pages }}
+            {{ $dateFmt := .Site.Params.dateFormat | default "January 2, 2006" }}
+
+            <div class="list">
+                {{ range $paginator.Pages }}
+                {{ $post := . }}
+                <article class="listItem">
+
+                    <!-- Image (clickable) with fallback chain -->
+                    {{ $img := $post.Params.featured_image | default $post.Params.image | default $post.Params.imageBig
+                    | default $post.Params.avatar }}
+                    <a class="post-image-link" href="{{ $post.RelPermalink }}">
+                        {{ if $img }}
+                        <img class="listItemImage" src="{{ $img }}" alt="{{ $post.Title }}" loading="lazy">
+                        {{ else }}
+                        <div class="listItemImage placeholder">No Image</div>
+                        {{ end }}
+                    </a>
+
+                    <!-- Text -->
+                    <div class="listItemTexts">
+                        <h3 class="listItemTitle">
+                            <a href="{{ $post.RelPermalink }}">{{ $post.Title }}</a>
+                        </h3>
+
+                        <div class="listItemDetail">
+                            <time datetime="{{ $post.Date.Format " 2006-01-02" }}">{{ $post.Date.Format $dateFmt
+                                }}</time>
+                        </div>
+
+                        {{ with $post.Params.categories }}
+                        <div class="listItemCategories">
+                            {{ range . }}
+                            {{ $cat := . }}
+                            <a class="listItemCategory" href="{{ (print "/categories/" (urlize $cat) "/" ) | relURL
+                                }}">
+                                {{ $cat }}
+                            </a>
+                            {{ end }}
+                        </div>
+                        {{ end }}
+
+                        <p class="listItemSummary">{{ $post.Summary | truncate 200 }}</p>
+                    </div>
+
+                </article>
+                {{ end }}
+            </div>
+
+            <!-- Pagination -->
+            {{ if gt $paginator.TotalPages 1 }}
+            <nav class="pagination" aria-label="Pagination">
+                <div class="pagination-inner">
+                    {{ if $paginator.HasPrev }}
+                    <a class="pagination-btn" href="{{ $paginator.Prev.URL }}">« Newer</a>
+                    {{ end }}
+
+                    {{ range $paginator.Pagers }}
+                    {{ if eq . $paginator }}
+                    <span class="pagination-page active">{{ .PageNumber }}</span>
+                    {{ else }}
+                    <a class="pagination-page" href="{{ .URL }}">{{ .PageNumber }}</a>
+                    {{ end }}
+                    {{ end }}
+
+                    {{ if $paginator.HasNext }}
+                    <a class="pagination-btn" href="{{ $paginator.Next.URL }}">Older »</a>
+                    {{ end }}
+                </div>
+            </nav>
+            {{ end }}
+
+            <!-- View All Posts Button -->
+            <div class="view-all-wrap" style="text-align:center; margin-top:40px;">
+                <a class="view-all-btn" href="{{ (print "/" (index .Site.Params.mainSections 0) "/" ) | relURL }}"
+                    style="display:inline-block; background:var(--accent); color:#fff; padding:12px 28px; border-radius:30px; font-size:1rem; text-decoration:none; transition:background 0.3s;">
+                    View All Posts →
+                </a>
+            </div>
+            
+            <!-- Browse Categories -->
+            <section class="section browse-cats">
+                <h2 class="section-title">Browse Categories</h2>
+
+                <div class="categories-grid">
+                    {{ $cats := .Site.Taxonomies.categories }}
+                    {{ range (sort $cats "Count" "desc") }}
+                    <a class="category-card" href="{{ .Page.RelPermalink }}">
+                        <div class="category-name">{{ .Page.Title }}</div>
+                        <div class="category-count">({{ .Count }})</div>
+                    </a>
+                    {{ end }}
+                </div>
+            </section>
+
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <section class="widget about-me">
+            <h3>About Me</h3>
+            <img src="/images/author.webp" alt="Author avatar" class="author-avatar">
+            <p>Hi, I’m <strong>Godfrey O Omoregie</strong> — sharing tips on tech, AI, and coding. Follow along for
+                tutorials and insights.</p>
+        </section>
+
+        <section class="widget popular-cats">
+            <h3>Popular Categories</h3>
+            <ul>
+                {{ $cats2 := .Site.Taxonomies.categories }}
+                {{ range first 5 (sort $cats2 "Count" "desc") }}
+                <li><a href="{{ .Page.RelPermalink }}">{{ .Page.Title }} ({{ .Count }})</a></li>
+                {{ end }}
+            </ul>
+        </section>
+
+        <section class="widget ad-space">
+            <div>Ad Space (300x250)</div>
+        </section>
+
+    </aside>
+</div>
+{{ end }}

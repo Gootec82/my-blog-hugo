@@ -1,0 +1,25 @@
+{{ define "main" }}
+<h1>{{ .Title }}</h1>
+<div class="list">
+    {{ range .Paginator.Pages }}
+    <div class="listItem">
+        <a href="{{ .RelPermalink }}">
+            <img src="{{ with .Params.image }}{{ . }}{{ end }}" class="listItemImage">
+        </a>
+        <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+    </div>
+    {{ end }}
+</div>
+
+{{ if gt .Paginator.TotalPages 1 }}
+<nav class="pagination">
+    {{ if .Paginator.HasPrev }}
+    <a href="{{ .Paginator.Prev.URL }}">&laquo; Newer</a>
+    {{ end }}
+    <span>Page {{ .Paginator.PageNumber }}</span>
+    {{ if .Paginator.HasNext }}
+    <a href="{{ .Paginator.Next.URL }}">Older &raquo;</a>
+    {{ end }}
+</nav>
+{{ end }}
+{{ end }}

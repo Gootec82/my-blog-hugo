@@ -1,0 +1,34 @@
+﻿baseURL = 'http://localhost:1313/'
+languageCode = 'en-us'
+title = 'Dev View'
+canonifyURLs = false
+relativeURLs = true
+
+[pagination]
+  pagerSize = 5
+
+[params]
+  description = 'Dev Blog'
+  dateFormat = 'Jan 2, 2006'
+  mainSections = ['posts']
+  defaultTheme = 'light'
+  search = true
+
+[permalinks]
+  posts = "/posts/:slug/"
+
+[taxonomies]
+  category = 'categories'
+  author = 'authors'
+  tag = 'tags'
+
+# Define the JSON output format
+[outputFormats]
+  [outputFormats.JSON]
+    mediaType = "application/json"
+    baseName = "index" # This will create index.json
+    isPlainText = true
+
+# Apply the output formats to different page types
+[outputs]
+  home = ["HTML", "RSS", "JSON"]

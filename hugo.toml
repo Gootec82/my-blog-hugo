@@ -1,0 +1,20 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = 'Dev View'
+
+[pagination]
+  pagerSize = 2  # Replaces old 'paginate' parameter
+  maximum = 100  # Recommended to prevent excessive page generation
+  anchor = ''    # Clean URLs like /page/2 (no #anchor)
+
+[params]
+  description = "Dev Blog"
+  dateFormat = "Jan 2, 2006"  # Fixed typo (was dataFormat)
+  # Add these recommended defaults:
+  mainSections = ["posts"]
+  defaultTheme = "light"
+
+[taxonomies]
+  category = "categories"
+  author = "authors"
+  tag = "tags"  # Recommended to enable tags
