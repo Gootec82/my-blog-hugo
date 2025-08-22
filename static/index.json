@@ -1,5 +1,7 @@
-﻿{
-    "title":  "Add Search To Hugo",
-    "url":  "/posts/add-search-to-hugo/",
-    "content":  "Read this post about Add Search To Hugo"
-}
+﻿[
+  {
+    "title": "Add Search To Hugo",
+    "url": "/posts/add-search-to-hugo/",
+    "content": "Read this post about Add Search To Hugo"
+  }
+]

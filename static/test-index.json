@@ -1,0 +1,17 @@
+[
+  {
+    "title": "How to Use Hugo for Blogging",
+    "url": "/posts/hugo-blogging-tutorial/",
+    "content": "Learn how to build a fast static blog with Hugo. This tutorial covers installation, themes, and deployment."
+  },
+  {
+    "title": "JavaScript Tips for Beginners",
+    "url": "/posts/javascript-tips/", 
+    "content": "Essential JavaScript tips every beginner should know. Includes variables, functions, and DOM manipulation."
+  },
+  {
+    "title": "CSS Grid Layout Guide",
+    "url": "/posts/css-grid-guide/",
+    "content": "Complete guide to CSS Grid Layout with examples and best practices for responsive design."
+  }
+]

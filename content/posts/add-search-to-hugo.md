@@ -1,7 +1,7 @@
 +++
 date = '2025-01-24T16:00:00+01:00'
 draft = false
-title = 'Add Search To Hugo Blog Site'
+title = 'Add Search To Hugo Blog'
 description = 'How to Add a Professional Search Bar to Your Hugo Blog'
 image = '/images/avatar.webp'
 imageBig = '/images/avatar.webp'
@@ -11,7 +11,7 @@ authors = ['Godfrey O Omoregie']
 avatar = '/images/author.webp'
 +++
 
-![Search Bar Concept](https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80)
+
 
 ## Introduction
 
