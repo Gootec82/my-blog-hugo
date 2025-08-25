@@ -3,6 +3,8 @@ title: "Contact Godfrey O. Omoregie"
 description: "Get in touch with Godfrey O. Omoregie - Software Developer. Let's discuss projects, collaborations, or technical questions."
 date: 2025-08-23
 draft: false
+imageBig: "/images/contact_us.webp"
+imageAlt: " contact-us image, a man holding a phone and laptop at the background"
 avatar: "/images/author.webp"
 ---
 
