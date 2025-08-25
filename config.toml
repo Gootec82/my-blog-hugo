@@ -1,4 +1,4 @@
-﻿baseURL = 'http://localhost:1313/'
+baseURL = 'http://localhost:1313/'
 languageCode = 'en-us'
 title = 'Dev View'
 canonifyURLs = false
@@ -13,22 +13,117 @@ relativeURLs = true
   mainSections = ['posts']
   defaultTheme = 'light'
   search = true
+  assetsVersion = "1.0.1"
+  searchInclude = ["title", "url", "categories", "tags", "description", "content"]
+  searchExclude = ["draft", "private"]
+  
+  [params.utterances]
+    enable = true
+    repo = "gootec82/my-blog-hugo"
+    issueTerm = "title"
+    theme = "github-light"
+  
+  [params.author]
+    name = "Godfrey O. Omoregie"
+    email = "godfreyomoregie1@gmail.com"
+    avatar = "/images/author.webp"
+    bio = "Software Developer & Technical Problem Solver"
+    github = "gootec82"
+    linkedin = "your-linkedin-profile"
+    twitter = "codewithgodfre"
+
+  [[params.social]]
+    name = "GitHub"
+    url = "https://github.com/gootec82"
+    icon = "github"
+
+  [[params.social]]
+    name = "LinkedIn"
+    url = "https://linkedin.com/in/yourprofile"
+    icon = "linkedin"
+
+  [[params.social]]
+    name = "Twitter"
+    url = "https://twitter.com/codewithgodfre"
+    icon = "twitter"
 
 [permalinks]
   posts = "/posts/:slug/"
+  about = "/about/"
+  contact = "/contact/"
+  privacy = "/privacy/"
+  terms = "/terms/"
+  disclaimer = "/disclaimer/"
 
 [taxonomies]
   category = 'categories'
   author = 'authors'
   tag = 'tags'
 
-# Define the JSON output format
 [outputFormats]
   [outputFormats.JSON]
     mediaType = "application/json"
-    baseName = "index" # This will create index.json
-    isPlainText = true
+    baseName = "index"
+    isPlainText = false
+    notAlternative = true
 
-# Apply the output formats to different page types
 [outputs]
   home = ["HTML", "RSS", "JSON"]
+  page = ["HTML"]
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+
+  [[menu.main]]
+    name = "Posts"
+    url = "/posts/"
+    weight = 2
+
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 3
+
+  [[menu.main]]
+    name = "Contact"
+    url = "/contact/"
+    weight = 4
+
+  [[menu.main]]
+    name = "Privacy"
+    url = "/privacy/"
+    weight = 50
+
+  [[menu.main]]
+    name = "Terms"
+    url = "/terms/"
+    weight = 51
+
+[[menu.footer]]
+  name = "Privacy Policy"
+  url = "/privacy/"
+  weight = 1
+
+[[menu.footer]]
+  name = "Terms of Service"
+  url = "/terms/"
+  weight = 2
+
+[[menu.footer]]
+  name = "Disclaimer"
+  url = "/disclaimer/"
+  weight = 3
+
+[[menu.footer]]
+  name = "Contact"
+  url = "/contact/"
+  weight = 4
+
+[services.googleAnalytics]
+id = "G-ZQX420PBJT"
+
+[build]
+  writeStats = true

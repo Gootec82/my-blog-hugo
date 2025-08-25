@@ -17,10 +17,28 @@
             </div>
             <time datetime="{{ .Date.Format " 2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
         </div>
-        <img src="{{ .Params.imageBig }}" alt="{{ .Title }}" class="singelHeadImg">
+        <!-- UPDATED IMAGE WITH BETTER ALT TEXT -->
+        <img src="{{ .Params.imageBig }}" alt="{{ .Params.imageAlt | default .Title }}" class="singleHeadImg">
     </div>
     <div class="singleBottom">
-        <div class="singleContent">{{ .Content }}</div>
+        <div class="singleContent">
+            {{ .Content }}
+
+            <!-- Comments Section -->
+            <div class="comments-section">
+                <h2 class="comments-title">Comments & Discussion</h2>
+                <p class="comments-notice">Join the conversation using your GitHub account. Comments are powered by
+                    Utterances.</p>
+
+                <script src="https://utteranc.es/client.js" repo="gootec82/my-blog-hugo" issue-term="title"
+                    theme="github-light" crossorigin="anonymous" async>
+                    </script>
+
+                <noscript>
+                    <p class="comments-noscript">Please enable JavaScript to view comments.</p>
+                </noscript>
+            </div>
+        </div>
         <div class="singleRightBar">
             {{ partial "rightBar" .}}
         </div>

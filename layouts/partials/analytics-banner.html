@@ -1,0 +1,253 @@
+<script>
+    // Prevent conflicts with other JavaScript
+    (function () {
+        // Save original console.log to avoid conflicts
+        const originalLog = console.log;
+        console.log = function (...args) {
+            if (!args[0]?.includes('Lunr') && !args[0]?.includes('search')) {
+                originalLog.apply(console, args);
+            }
+        };
+    })();
+</script>
+
+<!-- Combined Analytics and Cookie Consent Solution -->
+<div id="cookie-banner" class="cookie-banner" style="display: none;">
+    <div class="cookie-content">
+        <p>We use cookies for analytics to improve your experience. Your data remains anonymous and we respect your
+            privacy.</p>
+        <div class="cookie-buttons">
+            <button onclick="acceptCookies()" class="cookie-btn accept">Accept</button>
+            <button onclick="declineCookies()" class="cookie-btn decline">Decline</button>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Cookie Banner Styles */
+    .cookie-banner {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #2d3748;
+        color: white;
+        padding: 20px;
+        border-radius: 12px;
+        max-width: 380px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        z-index: 10000;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        border: 1px solid #4a5568;
+    }
+
+    .cookie-content p {
+        margin: 0 0 16px 0;
+        font-size: 14px;
+        line-height: 1.5;
+        color: #e2e8f0;
+    }
+
+    .cookie-buttons {
+        display: flex;
+        gap: 12px;
+        justify-content: flex-end;
+    }
+
+    .cookie-btn {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 500;
+        transition: all 0.2s ease;
+        min-width: 80px;
+    }
+
+    .cookie-btn.accept {
+        background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+        color: white;
+    }
+
+    .cookie-btn.decline {
+        background: transparent;
+        color: #e2e8f0;
+        border: 1px solid #4a5568;
+    }
+
+    .cookie-btn.accept:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(72, 187, 120, 0.3);
+    }
+
+    .cookie-btn.decline:hover {
+        background: #4a5568;
+        border-color: #718096;
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 768px) {
+        .cookie-banner {
+            bottom: 0;
+            right: 0;
+            left: 0;
+            max-width: none;
+            border-radius: 0;
+            border-left: none;
+            border-right: none;
+            border-bottom: none;
+        }
+
+        .cookie-buttons {
+            justify-content: center;
+        }
+
+        .cookie-btn {
+            flex: 1;
+            min-width: auto;
+        }
+    }
+
+    /* Animation */
+    .cookie-banner {
+        animation: slideInUp 0.5s ease-out;
+    }
+
+    @keyframes slideInUp {
+        from {
+            transform: translateY(100px);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    /* Toast Notification */
+    .cookie-toast {
+        position: fixed;
+        bottom: 80px;
+        right: 20px;
+        background: #48bb78;
+        color: white;
+        padding: 12px 20px;
+        border-radius: 6px;
+        z-index: 10001;
+        font-size: 14px;
+        animation: fadeInOut 3s ease-in-out;
+    }
+
+    @keyframes fadeInOut {
+        0% {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        10% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        90% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        100% {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+    }
+</style>
+
+<script>
+    // Cookie Consent Functions
+    function acceptCookies() {
+        localStorage.setItem('cookiesAccepted', 'true');
+        document.getElementById('cookie-banner').style.display = 'none';
+        loadGoogleAnalytics();
+        showToast('Cookies accepted. Thank you!');
+    }
+
+    function declineCookies() {
+        localStorage.setItem('cookiesAccepted', 'false');
+        document.getElementById('cookie-banner').style.display = 'none';
+        showToast('Cookies declined. Analytics disabled.');
+    }
+
+    function loadGoogleAnalytics() {
+        // Only load if accepted
+        if (localStorage.getItem('cookiesAccepted') === 'true') {
+            // Load Google Analytics script
+            const gaScript = document.createElement('script');
+            gaScript.async = true;
+            gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-ZQX420PBJT';
+
+            // Load the gtag function
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+
+            // Configure with privacy settings
+            gtag('config', 'G-ZQX420PBJT', {
+                'anonymize_ip': true,
+                'allow_google_signals': false,
+                'allow_ad_personalization_signals': false
+            });
+
+            document.head.appendChild(gaScript);
+            console.log('Google Analytics loaded with privacy protections');
+        }
+    }
+
+    function showToast(message) {
+        const toast = document.createElement('div');
+        toast.className = 'cookie-toast';
+        toast.textContent = message;
+        document.body.appendChild(toast);
+
+        setTimeout(() => {
+            toast.remove();
+        }, 3000);
+    }
+
+    // Initialize on page load
+    document.addEventListener('DOMContentLoaded', function () {
+        // Check if already decided
+        const cookiesAccepted = localStorage.getItem('cookiesAccepted');
+
+        if (cookiesAccepted === null) {
+            // First visit - show banner after delay
+            setTimeout(() => {
+                document.getElementById('cookie-banner').style.display = 'block';
+            }, 1500);
+        } else if (cookiesAccepted === 'true') {
+            // Returning user who accepted - load analytics immediately
+            loadGoogleAnalytics();
+        }
+        // If declined, do nothing
+    });
+
+    // Google Analytics tracking for page views (if accepted)
+    if (localStorage.getItem('cookiesAccepted') === 'true') {
+        window.addEventListener('load', function () {
+            if (typeof gtag === 'function') {
+                gtag('event', 'page_view', {
+                    'page_title': document.title,
+                    'page_location': window.location.href,
+                    'page_path': window.location.pathname
+                });
+            }
+        });
+    }
+</script>
+
+<!-- Fallback for users without JavaScript -->
+<noscript>
+    <div
+        style="position: fixed; bottom: 0; left: 0; right: 0; background: #f56565; color: white; padding: 10px; text-align: center; z-index: 10000;">
+        Please enable JavaScript for the best experience on our site.
+    </div>
+</noscript>

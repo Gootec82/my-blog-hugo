@@ -3,8 +3,9 @@ date = '2025-01-24T16:00:00+01:00'
 draft = false
 title = 'Add Search To Hugo Blog'
 description = 'How to Add a Professional Search Bar to Your Hugo Blog'
-image = '/images/avatar.webp'
-imageBig = '/images/avatar.webp'
+image = '/images/searchhugo.webp'
+imageBig = '/images/searchhugo.webp'
+imageAlt = 'Hugo blog search implementation code - team collaboration on web development solutions'
 categories = ['general', 'AI', 'web-development', 'blog']  # ← Match this format exactly
 tags = ['hugo', 'search', 'tutorial', 'blog']              # ← Match this format exactly
 authors = ['Godfrey O Omoregie']
@@ -216,7 +217,7 @@ If you're looking for a complete, ready-to-implement solution, I've created a co
 - Detailed documentation
 - Example implementations
 
-You can find the complete package and installation instructions on [GitHub Repository Link].
+You can find the complete package and installation instructions on [GitHub repository](https://github.com/gootec82/my-blog-hugo)
 
 The package is designed to be easily customizable and includes support for most common Hugo configurations. Whether you're new to Hugo or an experienced user, you'll find the implementation straightforward and well-documented.
 

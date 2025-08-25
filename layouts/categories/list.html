@@ -1,16 +1,27 @@
 {{ define "main" }}
 {{ if eq .RelPermalink "/categories/" }}
-<div class="categories-list">
-    {{ range $.Site.Taxonomies.categories.ByCount }}
-    <a href="/categories/{{ .Name }}" class="category-item">
-        <h2>{{ .Name }} <small>({{ .Count }})</small></h2>
-    </a>
-    {{ end }}
+<!-- CATEGORIES INDEX PAGE -->
+<div class="categories-container">
+    <h1>Blog Categories</h1>
+    <div class="categories-grid">
+        {{ range $.Site.Taxonomies.categories.ByCount }}
+        <a href="/categories/{{ .Name | urlize }}" class="category-card">
+            <h3>{{ .Name }}</h3>
+            <span class="post-count">{{ .Count }} post{{ if ne .Count 1 }}s{{ end }}</span>
+        </a>
+        {{ end }}
+    </div>
 </div>
 {{ else }}
+<!-- INDIVIDUAL CATEGORY PAGE -->
 <div class="list">
+    <div class="category-header">
+        <h1>Category: {{ .Title }}</h1>
+        <p>Showing all posts in this category</p>
+    </div>
+
     {{ range .Paginator.Pages }}
-    {{ $page := . }} <!-- Store page context in variable -->
+    {{ $page := . }}
     <div class="listItem">
         <a href="{{ .Permalink }}" class="listItemImageLink">
             {{ with .Params.image }}

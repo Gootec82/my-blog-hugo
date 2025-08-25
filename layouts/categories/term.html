@@ -1,0 +1,76 @@
+{{ define "main" }}
+<div class="category-posts">
+    <h1>Posts in: {{ .Title }}</h1>
+
+    <div class="posts-list">
+        {{ range .Pages }}
+        <article class="post-card">
+            <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+            <p class="post-meta">
+                <time>{{ .Date.Format "January 2, 2006" }}</time>
+            </p>
+            {{ if .Description }}
+            <p class="post-description">{{ .Description }}</p>
+            {{ end }}
+        </article>
+        {{ end }}
+    </div>
+</div>
+
+<style>
+    .category-posts {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2rem 1rem;
+    }
+
+    .posts-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        margin-top: 2rem;
+    }
+
+    .post-card {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .post-card h2 {
+        margin: 0 0 0.5rem 0;
+    }
+
+    .post-card h2 a {
+        text-decoration: none;
+        color: #2d3748;
+    }
+
+    .post-card h2 a:hover {
+        color: #4299e1;
+    }
+
+    .post-description {
+        color: #4a5568;
+        margin: 0.5rem 0 0 0;
+        line-height: 1.5;
+    }
+
+    .post-meta {
+        color: #718096;
+        font-size: 0.9rem;
+        margin: 0;
+    }
+
+    @media (max-width: 768px) {
+        .category-posts {
+            padding: 1rem;
+        }
+
+        .post-card {
+            padding: 1rem;
+        }
+    }
+</style>
+{{ end }}
