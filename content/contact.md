@@ -6,7 +6,7 @@ draft: false
 imageBig: "/images/contact_us.webp"       
 imageAlt: "contact-us image, a man holding a phone and laptop at the background"   
 avatar: "/images/author.webp"
-layout: "contact"  # ← This is the key!
+layout: "contact/single"  # ← This is the key!
 ---
 
 # Let's Connect 📞
