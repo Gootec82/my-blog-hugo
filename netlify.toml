@@ -1,157 +1,25 @@
-[build]
+﻿[build]
   publish = "public"
-  command = "hugo --gc --minify --buildFuture --buildDrafts"
-  environment = { HUGO_VERSION = "0.148.2" }
+  command = "hugo --gc --minify"
 
 [build.environment]
-  HUGO_ENABLEGITINFO = "true"
-  HUGO_ENV = "production"
+  HUGO_VERSION = "0.148.2"
 
 [context.production.environment]
   HUGO_ENV = "production"
 
-[context.deploy-preview.environment]
-  HUGO_ENV = "development"
-
-[context.branch-deploy.environment]
-  HUGO_ENV = "development"
-
-# ===== CRITICAL: JSON FILE REDIRECTS =====
 [[redirects]]
   from = "/index.json"
   to = "/index.json"
   status = 200
-  force = true
 
-[[redirects]]
-  from = "/*.json"
-  to = "/:splat.json"
-  status = 200
-  force = true
-
-# ===== NETLIFY FORM CONFIGURATION =====
 [[headers]]
   for = "/contact/"
   [headers.values]
     Cache-Control = "no-cache, no-store, must-revalidate"
-    X-Frame-Options = "DENY"
-    X-Content-Type-Options = "nosniff"
 
-# Form submission handling
-[[redirects]]
-  from = "/contact/"
-  to = "/contact/#thankyou"
-  status = 302
-  conditions = { FormName = "contact" }
-
-[[redirects]]
-  from = "/contact/"
-  to = "/contact/#error"
-  status = 302
-  conditions = { FormName = "contact", Status = "500" }
-
-# ===== SECURITY HEADERS =====
 [[headers]]
   for = "/*"
   [headers.values]
     X-Frame-Options = "DENY"
     X-XSS-Protection = "1; mode=block"
-    X-Content-Type-Options = "nosniff"
-    Referrer-Policy = "strict-origin-when-cross-origin"
-    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
-
-# ===== JSON FILES HEADERS =====
-[[headers]]
-  for = "/*.json"
-  [headers.values]
-    Access-Control-Allow-Origin = "*"
-    Content-Type = "application/json; charset=utf-8"
-    Cache-Control = "public, max-age=3600"
-    X-Robots-Tag = "noindex, nofollow"
-
-# ===== STATIC ASSETS CACHING =====
-[[headers]]
-  for = "/assets/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-[[headers]]
-  for = "/images/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-[[headers]]
-  for = "/*.css"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-[[headers]]
-  for = "/*.js"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-[[headers]]
-  for = "/*.woff2"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-# ===== HTML FILES CACHING =====
-[[headers]]
-  for = "/*.html"
-  [headers.values]
-    Cache-Control = "public, max-age=3600, must-revalidate"
-
-# ===== SPA (SINGLE PAGE APP) FALLBACK =====
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-  conditions = { Language = ["en"] }
-
-# ===== CLEAN URLS (REMOVE .HTML) =====
-[[redirects]]
-  from = "/posts/:year/:month/:day/:slug"
-  to = "/posts/:slug"
-  status = 301
-
-[[redirects]]
-  from = "/:file.html"
-  to = "/:file"
-  status = 301
-
-# ===== RSS FEED REDIRECT =====
-[[redirects]]
-  from = "/feed.xml"
-  to = "/index.xml"
-  status = 200
-
-# ===== ROBOTS.TXT =====
-[[redirects]]
-  from = "/robots.txt"
-  to = "/robots.txt"
-  status = 200
-  force = true
-
-# ===== SITEMAP =====
-[[redirects]]
-  from = "/sitemap.xml"
-  to = "/sitemap.xml"
-  status = 200
-  force = true
-
-# ===== FORM SUCCESS REDIRECTS =====
-[[redirects]]
-  from = "/thank-you"
-  to = "/contact/#thankyou"
-  status = 200
-
-[[redirects]]
-  from = "/form-error"
-  to = "/contact/#error"
-  status = 200
-
-# ===== ALLOW FORM ACTIONS =====
-[[headers]]
-  for = "/*"
-  [headers.values]
-    Content-Security-Policy = "default-src 'self'; form-action 'self' https://api.netlify.com;"
