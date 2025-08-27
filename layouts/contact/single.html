@@ -11,13 +11,8 @@
 
     <div class="contact-form-section">
         <h2>Send Me a Message</h2>
-        <!-- NETLIFY FORM FIXED -->
-        <form name="contact" method="POST" netlify netlify-honeypot="bot-field" class="contact-form">
-            <!-- Honeypot field -->
-            <p style="display: none;">
-                <label>Don't fill this out if you're human: <input name="bot-field"></label>
-            </p>
-
+        <!-- FORMSPREE FORM (ORIGINAL WORKING VERSION) -->
+        <form action="https://formspree.io/f/xblknvqw" method="POST" class="contact-form" id="contactForm">
             <div class="form-group">
                 <label for="name">Your Name *</label>
                 <input type="text" id="name" name="name" required class="form-input">
@@ -25,7 +20,7 @@
 
             <div class="form-group">
                 <label for="email">Your Email *</label>
-                <input type="email" id="email" name="email" required class="form-input">
+                <input type="email" id="email" name="_replyto" required class="form-input">
             </div>
 
             <div class="form-group">
@@ -44,6 +39,10 @@
                 <label for="message">Your Message *</label>
                 <textarea id="message" name="message" rows="5" required class="form-input"></textarea>
             </div>
+
+            <!-- Formspree hidden fields -->
+            <input type="hidden" name="_subject" value="New Contact Form Submission">
+            <input type="text" name="_gotcha" style="display:none"> <!-- Anti-spam -->
 
             <button type="submit" class="btn-primary">Send Message</button>
         </form>
@@ -88,7 +87,6 @@
 
     .contact-description {
         font-size: 1.1rem;
-        color: #4aa3ff;
         line-height: 1.6;
     }
 
@@ -239,6 +237,19 @@
         text-align: center;
     }
 
+    /* Success and Error States */
+    .form-success {
+        background: #d4edda !important;
+        color: #155724 !important;
+        border: 1px solid #c3e6cb;
+    }
+
+    .form-error {
+        background: #f8d7da !important;
+        color: #721c24 !important;
+        border: 1px solid #f5c6cb;
+    }
+
     /* Light Mode Adjustments */
     body.light .contact-form-section,
     body.light .contact-alternatives {
@@ -305,16 +316,16 @@
     }
 </style>
 
-<!-- Netlify Form Enhancement JavaScript -->
+<!-- Form Submission JavaScript -->
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-        const form = document.querySelector('.contact-form');
+        const form = document.getElementById('contactForm');
         const messageDiv = document.getElementById('form-message');
 
         if (!form) return;
 
-        // Netlify handles submission automatically, but we can enhance it
-        form.addEventListener('submit', function (e) {
+        form.addEventListener('submit', async function (e) {
+            e.preventDefault();
             const submitButton = form.querySelector('button[type="submit"]');
             const originalText = submitButton.textContent;
 
@@ -323,30 +334,34 @@
             submitButton.disabled = true;
             messageDiv.style.display = 'none';
 
-            // Netlify will handle the actual submission
-            // This just provides user feedback
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
 
-            // Reset button after a delay (Netlify takes over)
-            setTimeout(() => {
+                if (response.ok) {
+                    // Success message
+                    messageDiv.style.display = 'block';
+                    messageDiv.className = 'form-success';
+                    messageDiv.textContent = 'Thank you! Your message has been sent successfully.';
+                    form.reset();
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            } catch (error) {
+                // Error message
+                messageDiv.style.display = 'block';
+                messageDiv.className = 'form-error';
+                messageDiv.textContent = 'There was an error sending your message. Please try again or use WhatsApp/Email.';
+            } finally {
+                // Reset button state
                 submitButton.textContent = originalText;
                 submitButton.disabled = false;
-            }, 3000);
-        });
-
-        // Listen for Netlify form events
-        document.addEventListener('netlifyFormsSuccess', function (e) {
-            messageDiv.style.display = 'block';
-            messageDiv.style.background = '#d4edda';
-            messageDiv.style.color = '#155724';
-            messageDiv.textContent = 'Thank you! Your message has been sent successfully.';
-            form.reset();
-        });
-
-        document.addEventListener('netlifyFormsError', function (e) {
-            messageDiv.style.display = 'block';
-            messageDiv.style.background = '#f8d7da';
-            messageDiv.style.color = '#721c24';
-            messageDiv.textContent = 'There was an error sending your message. Please try again or use WhatsApp/Email.';
+            }
         });
     });
 </script>
