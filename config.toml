@@ -1,8 +1,8 @@
-baseURL = 'https://devview.netlify.app'
+baseURL = 'https://devview.netlify.app/'  # Added trailing slash - CRITICAL!
 languageCode = 'en-us'
 title = 'Dev View'
-canonifyURLs = false
-relativeURLs = true
+canonifyURLs = true  # Changed to true for production
+relativeURLs = false  # Changed to false for production
 
 [pagination]
   pagerSize = 5
@@ -60,15 +60,20 @@ relativeURLs = true
   author = 'authors'
   tag = 'tags'
 
+[mediaTypes]  # ADDED THIS SECTION - CRITICAL!
+  [mediaTypes."application/json"]
+    suffixes = ["json"]
+
 [outputFormats]
   [outputFormats.JSON]
     mediaType = "application/json"
     baseName = "index"
-    isPlainText = false
+    isPlainText = true  # Changed to true
     notAlternative = true
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]
+  section = ["HTML", "JSON"]  # ADDED THIS LINE - CRITICAL!
   page = ["HTML"]
 
 [menu]

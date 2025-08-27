@@ -1,36 +1,71 @@
-// Enhanced Search - Includes Titles, Categories, and Tags
-console.log("🔍 Enhanced search initialized - Now with categories and tags!");
+// Production Search - Fixed URLs & Debugging
+console.log("🔍 Production search initialized");
 
 document.addEventListener('DOMContentLoaded', function() {
+    console.log("DOM loaded - initializing production search");
+    
     const searchInput = document.getElementById('search-input');
     const searchResults = document.getElementById('search-results');
     
     if (!searchInput || !searchResults) {
-        console.log("Search elements not found");
+        console.error("Search elements not found");
         return;
     }
     
     let searchData = [];
     
-    // Load search data
-    fetch('/index.json')
-        .then(response => response.json())
+    // Load search data with production URL
+    const jsonUrl = window.location.origin + '/index.json';
+    console.log("Fetching search index from:", jsonUrl);
+    
+    fetch(jsonUrl)
+        .then(response => {
+            if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
+            return response.json();
+        })
         .then(posts => {
+            console.log(`✅ Loaded ${posts.length} posts for search`);
             searchData = posts;
-            console.log(`✅ Loaded ${posts.length} posts with categories and tags`);
+            
+            // Log first post for verification
+            if (posts.length > 0) {
+                console.log("Sample post URL:", {
+                    title: posts[0].title,
+                    originalUrl: posts[0].permalink,
+                    fixedUrl: window.location.origin + fixPostUrl(posts[0].permalink)
+                });
+            }
         })
         .catch(error => {
-            console.log("Error loading search data:", error);
-            searchResults.innerHTML = '<div class="no-results">Search data not available</div>';
+            console.error("Error loading search data:", error);
+            searchResults.innerHTML = '<div class="no-results">Search temporarily unavailable</div>';
         });
     
-    // Enhanced search function
+    // Function to fix post URLs
+    function fixPostUrl(url) {
+        if (!url) return '/';
+        
+        let fixedUrl = url;
+        
+        // Ensure starts with slash
+        if (!fixedUrl.startsWith('/')) {
+            fixedUrl = '/' + fixedUrl;
+        }
+        
+        // Ensure ends with slash for Hugo posts
+        if (!fixedUrl.endsWith('/') && !fixedUrl.includes('.')) {
+            fixedUrl = fixedUrl + '/';
+        }
+        
+        return fixedUrl;
+    }
+    
+    // Search function
     searchInput.addEventListener('input', function() {
         const query = this.value.toLowerCase().trim();
         searchResults.innerHTML = '';
         searchResults.style.display = 'none';
         
-        // Minimum 3 characters
         if (query.length < 3) return;
         
         if (searchData.length === 0) {
@@ -39,32 +74,12 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         
-        console.log("Searching for:", query);
-        
-        // Search through TITLES, CATEGORIES, and TAGS
         const results = searchData.filter(post => {
-            // 1. Search in TITLE
             const titleMatch = post.title && post.title.toLowerCase().includes(query);
-            
-            // 2. Search in CATEGORIES
-            const categoryMatch = post.categories && post.categories.some(cat => 
-                cat.toLowerCase().includes(query)
-            );
-            
-            // 3. Search in TAGS  
-            const tagMatch = post.tags && post.tags.some(tag => 
-                tag.toLowerCase().includes(query)
-            );
-            
-            // 4. Search in CONTENT (optional)
             const contentMatch = post.content && post.content.toLowerCase().includes(query);
-            
-            return titleMatch || categoryMatch || tagMatch || contentMatch;
+            return titleMatch || contentMatch;
         });
         
-        console.log("Found results:", results.length);
-        
-        // Display results with category/tag info
         if (results.length === 0) {
             searchResults.innerHTML = '<div class="no-results">No results found</div>';
         } else {
@@ -72,23 +87,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 const div = document.createElement('div');
                 div.className = 'search-result';
                 
-                // Fix URL issues
-                let postUrl = post.permalink || post.url || '';
-                postUrl = postUrl.replace(/\/$/, '');
-                
-                // Show categories and tags in results
-                const categoriesInfo = post.categories && post.categories.length > 0 ? 
-                    `<div class="search-meta">📁 ${post.categories.join(', ')}</div>` : '';
-                
-                const tagsInfo = post.tags && post.tags.length > 0 ? 
-                    `<div class="search-meta">🏷️ ${post.tags.join(', ')}</div>` : '';
+                // FIXED URL GENERATION
+                const fixedUrl = fixPostUrl(post.permalink || post.url);
+                const absoluteUrl = window.location.origin + fixedUrl;
                 
                 div.innerHTML = `
-                    <a href="${postUrl}" class="search-result-link">
+                    <a href="${absoluteUrl}" class="search-result-link">
                         <h4>${post.title}</h4>
                         ${post.description ? `<p class="search-desc">${post.description}</p>` : ''}
-                        ${categoriesInfo}
-                        ${tagsInfo}
                     </a>
                 `;
                 searchResults.appendChild(div);
@@ -97,4 +103,39 @@ document.addEventListener('DOMContentLoaded', function() {
         
         searchResults.style.display = 'block';
     });
+    
+    // Close search when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
+            searchResults.style.display = 'none';
+        }
+    });
+    
+    // Debug function to test URLs
+    window.debugSearchUrls = function() {
+        console.log("=== SEARCH URL DEBUG ===");
+        console.log("Window origin:", window.location.origin);
+        
+        if (searchData.length > 0) {
+            searchData.slice(0, 3).forEach((post, index) => {
+                const fixedUrl = fixPostUrl(post.permalink);
+                const absoluteUrl = window.location.origin + fixedUrl;
+                console.log(`Post ${index + 1}:`, {
+                    title: post.title,
+                    original: post.permalink,
+                    fixed: fixedUrl,
+                    absolute: absoluteUrl
+                });
+            });
+        }
+    };
 });
+
+// Run debug function automatically in development
+if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+    setTimeout(() => {
+        if (typeof window.debugSearchUrls === 'function') {
+            window.debugSearchUrls();
+        }
+    }, 3000);
+}

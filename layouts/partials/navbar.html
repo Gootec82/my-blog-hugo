@@ -1,8 +1,17 @@
 <nav class="navbar">
     <div class="logo">
         <a href="/">DevView</a>
+        <div class="tagline"></div>
     </div>
-    <div class="links">
+
+    <!-- Hamburger Menu for Mobile -->
+    <div class="hamburger" id="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+
+    <div class="links" id="nav-links">
         <div class="toggle">
             <!-- Dark/Light mode toggle -->
             <svg width="20px" height="20px" viewBox="-0.14 0 20.03 20.03" fill="#000000">
@@ -27,9 +36,9 @@
         <a href="/contact">Contact</a>
         <a href="/about">About</a>
 
-        <!-- 🔍 MOVE THE SEARCH INPUT HERE (OUTSIDE THE BUTTON) -->
+        <!-- Search Container -->
         <div class="search-container">
-            <input type="text" id="search-input" placeholder="Search posts..." class="search-input">
+            <input type="text" id="search-input" placeholder="Search..." class="search-input">
             <ul id="search-results" class="search-results"></ul>
         </div>
     </div>

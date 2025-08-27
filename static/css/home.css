@@ -77,7 +77,6 @@
 }
 
 .listItemDetail {
-    color: var(--textSoft);
     font-size: 0.9rem;
 }
 
@@ -192,14 +191,16 @@
 }
 
 .widget {
+    background-color: #e0f0ff;
+    color: #0066cc;
     padding: 18px;
-    background: var(--bgSoft);
+    
     border-radius: 10px;
 }
 
 .widget h3 {
     margin: 0 0 12px 0;
-    color: var(--text);
+    
 }
 
 .author-avatar {

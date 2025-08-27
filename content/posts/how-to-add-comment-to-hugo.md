@@ -1,5 +1,6 @@
 ---
 title: "How to Add Comments to Your Hugo Blog: A Comprehensive Guide"
+slug: "how-to-add-comment-to-hugo"
 description: "Learn how to add comment systems to your Hugo static site. Compare Utterances, Disqus, Commento, and Giscus with step-by-step instructions."
 date: 2025-08-14T16:34:06+01:00
 draft: false

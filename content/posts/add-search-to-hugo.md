@@ -1,16 +1,17 @@
-+++
-date = '2025-01-24T16:00:00+01:00'
-draft = false
-title = 'Add Search To Hugo Blog'
-description = 'How to Add a Professional Search Bar to Your Hugo Blog'
-image = '/images/searchhugo.webp'
-imageBig = '/images/searchhugo.webp'
-imageAlt = 'Hugo blog search implementation code - team collaboration on web development solutions'
-categories = ['general', 'AI', 'web-development', 'blog']  # ← Match this format exactly
-tags = ['hugo', 'search', 'tutorial', 'blog']              # ← Match this format exactly
-authors = ['Godfrey O Omoregie']
-avatar = '/images/author.webp'
-+++
+---
+date: 2025-01-24T16:00:00+01:00
+draft: false
+title: "Add Search To Hugo Blog"
+slug: "add-search-to-hugo"
+description: "How to Add a Professional Search Bar to Your Hugo Blog"
+image: "/images/searchhugo.webp"
+imageBig: "/images/searchhugo.webp" 
+imageAlt: "Hugo blog search implementation code - team collaboration on web development solutions"
+categories: ["general", "AI", "web-development", "blog"]
+tags: ["hugo", "search", "tutorial", "blog"]
+authors: ["Godfrey O Omoregie"]
+avatar: "/images/author.webp"
+---
 
 
 
