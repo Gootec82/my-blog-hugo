@@ -1,8 +1,8 @@
 baseURL = 'https://devview.netlify.app/'  # Added trailing slash - CRITICAL!
 languageCode = 'en-us'
 title = 'DevViews'
-canonifyURLs = true
-relativeURLs = false
+canonifyURLs = true  # Ensures absolute URLs for SEO
+relativeURLs = false  # Needed for Netlify deployment
 
 [pagination]
   pagerSize = 5
@@ -11,18 +11,13 @@ relativeURLs = false
   description = "DevViews – A modern tech blog for developers"
   dateFormat = 'Jan 2, 2006'
   mainSections = ['posts']
-  defaultTheme = 'light' # Options: light, dark, auto
+  defaultTheme = 'light'
   search = true
   assetsVersion = "1.0.1"
   searchInclude = ["title", "url", "categories", "tags", "description", "content"]
   searchExclude = ["draft", "private"]
 
-  [params.utterances]
-    enable = true
-    repo = "gootec82/my-blog-hugo"
-    issueTerm = "title"
-    theme = "github-light"
-
+  # === Author Information ===
   [params.author]
     name = "Godfrey O. Omoregie"
     email = "godfreyomoregie1@gmail.com"
@@ -30,9 +25,10 @@ relativeURLs = false
     bio = "Software Developer & Technical Problem Solver"
     github = "gootec82"
     linkedin = "https://linkedin.com/in/yourprofile"
-    twitter = "@godfreycode1"
-    instagram = "https://instagram.com/your_instagram_username"
+    twitter = "https://twitter.com/codewithgodfre"
+    instagram = "https://instagram.com/your_instagram"  # NEWLY ADDED ✅
 
+  # === Social Media Links ===
   [[params.social]]
     name = "GitHub"
     url = "https://github.com/gootec82"
@@ -45,13 +41,31 @@ relativeURLs = false
 
   [[params.social]]
     name = "Twitter"
-    url = "https://twitter.com/godfreycode1"
+    url = "https://twitter.com/codewithgodfre"
     icon = "twitter"
 
   [[params.social]]
     name = "Instagram"
-    url = "https://instagram.com/your_instagram_username"
+    url = "https://instagram.com/your_instagram"
     icon = "instagram"
+
+  # === Utterances Comments Integration ===
+  [params.utterances]
+    enable = true
+    repo = "gootec82/my-blog-hugo"
+    issueTerm = "title"
+    theme = "github-light"
+
+  # === Open Graph & Twitter Card SEO ===
+  [params.opengraph]
+    enable = true
+    title = "DevViews – A Modern Tech Blog for Developers"
+    description = "Stay updated with the latest in technology, coding tutorials, tips, and insights for developers."
+    image = "/images/devviews-og-image.webp"  # Recommended size: 1200x630px
+    type = "website"
+    twitterCard = "summary_large_image"
+    twitterSite = "@godfreycode1"
+    twitterCreator = "@godfreycode1"
 
 [permalinks]
   posts = "/posts/:slug/"
@@ -66,7 +80,7 @@ relativeURLs = false
   author = 'authors'
   tag = 'tags'
 
-[mediaTypes]
+[mediaTypes]  
   [mediaTypes."application/json"]
     suffixes = ["json"]
 
@@ -113,25 +127,25 @@ relativeURLs = false
     url = "/terms/"
     weight = 51
 
-[[menu.footer]]
-  name = "Privacy Policy"
-  url = "/privacy/"
-  weight = 1
+  [[menu.footer]]
+    name = "Privacy Policy"
+    url = "/privacy/"
+    weight = 1
 
-[[menu.footer]]
-  name = "Terms of Service"
-  url = "/terms/"
-  weight = 2
+  [[menu.footer]]
+    name = "Terms of Service"
+    url = "/terms/"
+    weight = 2
 
-[[menu.footer]]
-  name = "Disclaimer"
-  url = "/disclaimer/"
-  weight = 3
+  [[menu.footer]]
+    name = "Disclaimer"
+    url = "/disclaimer/"
+    weight = 3
 
-[[menu.footer]]
-  name = "Contact"
-  url = "/contact/"
-  weight = 4
+  [[menu.footer]]
+    name = "Contact"
+    url = "/contact/"
+    weight = 4
 
 [services.googleAnalytics]
 id = "G-ZQX420PBJT"
