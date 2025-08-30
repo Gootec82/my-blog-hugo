@@ -13,6 +13,7 @@
 }
 
 body {
+  margin-top: 20px;
   background: var(--bg);
   color: var(--text);
   font-family: "Roboto", sans-serif;
@@ -85,7 +86,7 @@ a:hover {
   background-color: var(--bg);
   z-index: 1000;
   padding: 0 2rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
 }
 
 
@@ -294,22 +295,287 @@ a:hover {
   margin-top: 2rem;
 }
 
-/* ===== FOOTER ===== */
+
 .footer {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
-  padding: 2rem;
+  gap: 1.5rem;
+  padding: 2.5rem;
   text-align: center;
-  margin-top: auto;
+  margin-top: 2rem;
+  background: linear-gradient(135deg, #4f46e5, #06b6d4, #ff7e5f);
+  background-size: 300% 300%;
+  animation: gradientMove 8s ease infinite;
+  color: #fff;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 -3px 12px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Logo styling */
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+  font-size: 1.4rem;
+  color: #fff;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.footer-logo img {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+}
+
+.footer-logo:hover {
+  transform: scale(1.05);
+}
+
+/* Social icons */
 .social {
   display: flex;
   gap: 1rem;
+  margin-top: 0.5rem;
 }
+
+.social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.social a:hover {
+  background-color: #fff;
+  color: #4f46e5;
+  transform: scale(1.1);
+}
+
+/* ================================
+   Newsletter form (your original)
+   — now responsive only
+   ================================ */
+.newsletter {
+  max-width: 400px;
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  /* keep in one line on desktop */
+  gap: 0;
+  /* seamless join between input & button */
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.newsletter input {
+  flex: 1 1 auto;
+  min-width: 0;
+  /* prevents overflow on small screens */
+  padding: 0.7rem 1rem;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: #fff;
+  font-size: 1rem;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.newsletter input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.newsletter button {
+  flex: 0 0 auto;
+  /* don't let button shrink weirdly */
+  padding: 0.7rem 1.2rem;
+  background-color: #ff7e5f;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  /* keep text on one line */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.newsletter button:hover {
+  background-color: #06b6d4;
+}
+
+/* Footer text */
+.footer-text {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-top: 1rem;
+}
+
+/* Fix footer spacing on smaller screens */
+@media (max-width: 600px) {
+  .footer {
+    margin-top: 2rem !important;
+    padding: 1.5rem 1rem;
+  }
+
+  /* stack input + button vertically and make both full width */
+  .newsletter {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+    /* nice breathing room when stacked */
+    background-color: transparent;
+    /* let children have radius when stacked */
+    box-shadow: none;
+    /* cleaner on mobile; children keep visual weight */
+  }
+
+  .newsletter input,
+  .newsletter button {
+    width: 100%;
+    border-radius: 8px;
+    /* rounded corners when stacked */
+  }
+
+  /* reapply background panel look using a wrapper feel */
+  .newsletter input {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .newsletter button {
+    background: linear-gradient(45deg, #6d28d9, #f97316, #06b6d4);
+  }
+}
+
+/* ================================
+   Alternative hook you already had
+   (kept & aligned with the above)
+   ================================ */
+.newsletter-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.newsletter-form input {
+  flex: 1 1 220px;
+  min-width: 0;
+  padding: 0.7rem 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.newsletter-form button {
+  padding: 0.7rem 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  background: linear-gradient(45deg, #6d28d9, #f97316, #06b6d4);
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s ease;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* Stack input + button on smaller screens */
+@media (max-width: 600px) {
+  .newsletter-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .newsletter-form input,
+  .newsletter-form button {
+    width: 100%;
+  }
+}
+
+/* Tiny devices */
+@media (max-width: 320px) {
+  .footer {
+    gap: 1rem;
+    padding: 1.2rem 0.5rem;
+  }
+
+  .footer-logo {
+    font-size: 1.1rem;
+  }
+
+  .footer-logo img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .social a {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+
+  .newsletter-form input {
+    font-size: 0.9rem;
+    padding: 0.7rem;
+  }
+
+  .newsletter-form button {
+    font-size: 0.9rem;
+    padding: 0.7rem;
+  }
+
+  .footer-text {
+    font-size: 0.8rem;
+  }
+}
+ 
+
 
 /* ===== LIST ITEMS ===== */
 .listItem {
@@ -318,6 +584,8 @@ a:hover {
   gap: 50px;
   margin-bottom: 50px;
 }
+
+
 
 .listItemImage {
   width: 200px;

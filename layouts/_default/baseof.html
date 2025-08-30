@@ -7,7 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="description" content={{or .Params.description .Site.Params.description}}>
     <link rel="stylesheet" href="/css/style.css?v={{ now.Unix }}">
-    <link rel="icon" href="/images/favicon.png" />
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><defs><linearGradient id='gradient' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' stop-color='%234F46E5'/><stop offset='100%' stop-color='%2306B6D4'/></linearGradient></defs><rect width='32' height='32' rx='6' fill='url(%23gradient)'/><text x='16' y='22' text-anchor='middle' fill='white' font-family='Arial, sans-serif' font-weight='bold' font-size='16'>DV</text></svg>">
+
+
+
     <title>{{ .Title }}</title>
 </head>
 

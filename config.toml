@@ -1,36 +1,37 @@
 baseURL = 'https://devview.netlify.app/'  # Added trailing slash - CRITICAL!
 languageCode = 'en-us'
-title = 'Dev View'
-canonifyURLs = true  # Changed to true for production
-relativeURLs = false  # Changed to false for production
+title = 'DevViews'
+canonifyURLs = true
+relativeURLs = false
 
 [pagination]
   pagerSize = 5
 
 [params]
-  description = 'Dev Blog'
+  description = "DevViews – A modern tech blog for developers"
   dateFormat = 'Jan 2, 2006'
   mainSections = ['posts']
-  defaultTheme = 'light'
+  defaultTheme = 'light' # Options: light, dark, auto
   search = true
   assetsVersion = "1.0.1"
   searchInclude = ["title", "url", "categories", "tags", "description", "content"]
   searchExclude = ["draft", "private"]
-  
+
   [params.utterances]
     enable = true
     repo = "gootec82/my-blog-hugo"
     issueTerm = "title"
     theme = "github-light"
-  
+
   [params.author]
     name = "Godfrey O. Omoregie"
     email = "godfreyomoregie1@gmail.com"
     avatar = "/images/author.webp"
     bio = "Software Developer & Technical Problem Solver"
     github = "gootec82"
-    linkedin = "your-linkedin-profile"
-    twitter = "codewithgodfre"
+    linkedin = "https://linkedin.com/in/yourprofile"
+    twitter = "@godfreycode1"
+    instagram = "https://instagram.com/your_instagram_username"
 
   [[params.social]]
     name = "GitHub"
@@ -44,8 +45,13 @@ relativeURLs = false  # Changed to false for production
 
   [[params.social]]
     name = "Twitter"
-    url = "https://twitter.com/codewithgodfre"
+    url = "https://twitter.com/godfreycode1"
     icon = "twitter"
+
+  [[params.social]]
+    name = "Instagram"
+    url = "https://instagram.com/your_instagram_username"
+    icon = "instagram"
 
 [permalinks]
   posts = "/posts/:slug/"
@@ -60,7 +66,7 @@ relativeURLs = false  # Changed to false for production
   author = 'authors'
   tag = 'tags'
 
-[mediaTypes]  # ADDED THIS SECTION - CRITICAL!
+[mediaTypes]
   [mediaTypes."application/json"]
     suffixes = ["json"]
 
@@ -68,12 +74,12 @@ relativeURLs = false  # Changed to false for production
   [outputFormats.JSON]
     mediaType = "application/json"
     baseName = "index"
-    isPlainText = true  # Changed to true
+    isPlainText = true
     notAlternative = true
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]
-  section = ["HTML", "JSON"]  # ADDED THIS LINE - CRITICAL!
+  section = ["HTML", "JSON"]
   page = ["HTML"]
 
 [menu]
