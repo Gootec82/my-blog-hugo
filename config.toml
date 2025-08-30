@@ -1,8 +1,8 @@
 baseURL = 'https://devview.netlify.app/'  # Added trailing slash - CRITICAL!
 languageCode = 'en-us'
 title = 'DevViews'
-canonifyURLs = true  # Ensures absolute URLs for SEO
-relativeURLs = false  # Needed for Netlify deployment
+canonifyURLs = true        # Ensures absolute URLs for SEO
+relativeURLs = false      # Needed for Netlify deployment
 
 [pagination]
   pagerSize = 5
@@ -26,7 +26,7 @@ relativeURLs = false  # Needed for Netlify deployment
     github = "gootec82"
     linkedin = "https://linkedin.com/in/yourprofile"
     twitter = "https://twitter.com/codewithgodfre"
-    instagram = "https://instagram.com/your_instagram"  # NEWLY ADDED ✅
+    instagram = "https://instagram.com/your_instagram"
 
   # === Social Media Links ===
   [[params.social]]
@@ -56,12 +56,12 @@ relativeURLs = false  # Needed for Netlify deployment
     issueTerm = "title"
     theme = "github-light"
 
-  # === Open Graph & Twitter Card SEO ===
+  # === Open Graph & Twitter Card SEO === ✅
   [params.opengraph]
     enable = true
     title = "DevViews – A Modern Tech Blog for Developers"
     description = "Stay updated with the latest in technology, coding tutorials, tips, and insights for developers."
-    image = "/images/devviews-og-image.webp"  # Recommended size: 1200x630px
+    image = "/images/devviews-og.png"  # <-- UPDATED OG IMAGE PATH ✅
     type = "website"
     twitterCard = "summary_large_image"
     twitterSite = "@godfreycode1"
@@ -80,7 +80,7 @@ relativeURLs = false  # Needed for Netlify deployment
   author = 'authors'
   tag = 'tags'
 
-[mediaTypes]  
+[mediaTypes]
   [mediaTypes."application/json"]
     suffixes = ["json"]
 
