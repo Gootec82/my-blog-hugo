@@ -5,14 +5,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="description" content={{or .Params.description .Site.Params.description}}>
-    <link rel="stylesheet" href="/css/style.css?v={{ now.Unix }}">
+
+    <!-- Primary Meta Tags -->
+    <title>{{ .Title }} | {{ .Site.Title }}</title>
+    <meta name="description"
+        content="{{ with .Params.description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+    <meta name="author" content="DevViews">
+    <meta name="theme-color" content="#4F46E5">
+
+    <!-- Open Graph / Facebook / WhatsApp / LinkedIn -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="DevViews">
+    <meta property="og:title" content="{{ .Title }} | {{ .Site.Title }}">
+    <meta property="og:description"
+        content="{{ with .Params.description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+    <meta property="og:url" content="{{ .Permalink }}">
+    <meta property="og:image" content="{{ .Site.BaseURL }}images/devviews-og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ .Title }} | {{ .Site.Title }}">
+    <meta name="twitter:description"
+        content="{{ with .Params.description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+    <meta name="twitter:image" content="{{ .Site.BaseURL }}images/devviews-og.png">
+
+    <!-- Favicon -->
     <link rel="icon"
         href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><defs><linearGradient id='gradient' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' stop-color='%234F46E5'/><stop offset='100%' stop-color='%2306B6D4'/></linearGradient></defs><rect width='32' height='32' rx='6' fill='url(%23gradient)'/><text x='16' y='22' text-anchor='middle' fill='white' font-family='Arial, sans-serif' font-weight='bold' font-size='16'>DV</text></svg>">
 
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/css/style.css?v={{ now.Unix }}">
 
-
-    <title>{{ .Title }}</title>
 </head>
 
 <body>
@@ -22,15 +47,16 @@
         {{ partial "footer" . }}
     </div>
 
-    <!-- Analytics Banner OUTSIDE the container -->
-     {{ partial "analytics-banner.html" . }}
+    <!-- Analytics Banner -->
+    {{ partial "analytics-banner.html" . }}
 
-<script src="https://unpkg.com/lunr@2.3.9/lunr.min.js"></script>
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lunr@2.3.9/lunr.min.js"></script>
     <script src="/js/app.js"></script>
     <script src="/js/search.js"></script>
 
+    <!-- Hamburger Menu Fix -->
     <script>
-        // ===== HAMBURGER MENU FIX =====
         console.log('🧭 Hamburger fix loaded');
 
         document.addEventListener('DOMContentLoaded', function () {
@@ -44,12 +70,10 @@
                 return;
             }
 
-            // Force make it clickable
             hamburger.style.pointerEvents = 'auto';
             hamburger.style.zIndex = '9999';
             hamburger.style.cursor = 'pointer';
 
-            // Simple click handler
             hamburger.onclick = function (e) {
                 e.stopPropagation();
                 e.preventDefault();
