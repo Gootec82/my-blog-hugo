@@ -677,7 +677,7 @@ a:hover {
   top: 100%;
   left: 0;
   right: 0;
-  background: white;
+  
   border: 1px solid #e2e8f0;
   border-radius: 8px;
   list-style: none;
@@ -717,7 +717,7 @@ a:hover {
 
 /* ===== ENHANCED SEARCH ===== */
 .search-result {
-  border-bottom: 1px solid var(--bgSoft);
+  background-color: var(--bgSoft);
   padding: 1rem 0;
 }
 
