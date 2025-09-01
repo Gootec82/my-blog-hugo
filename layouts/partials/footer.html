@@ -3,17 +3,17 @@
       <img src="/images/logo.png" alt="Devviews Code Logo" />
       DevViews
    </a>
-               <!-- Footer Links -->
-               <div class="footerLinks">
-                  <a href="/">DevViews</a> |
-                  <a href="/categories">Categories</a> |
-                  <a href="/sitemap.xml">Sitemap</a> |
-                  <a href="/about">About</a> |
-                  <a href="/contact">Contact</a> |
-                  <a href="/privacy">Privacy</a> |
-                  <a href="/terms">Terms</a> |
-                  <a href="/disclaimer">Disclaimer</a>
-               </div>
+   <!-- Footer Links -->
+   <div class="footerLinks">
+      <a href="/">DevViews</a> |
+      <a href="/categories">Categories</a> |
+      <a href="/sitemap.xml">Sitemap</a> |
+      <a href="/about">About</a> |
+      <a href="/contact">Contact</a> |
+      <a href="/privacy">Privacy</a> |
+      <a href="/terms">Terms</a> |
+      <a href="/disclaimer">Disclaimer</a>
+   </div>
 
    <div class="social">
       <a href="https://youtube.com/add your user name" target="_blank">
@@ -34,8 +34,8 @@
                d="M 25.289062 14.746094 C 25.289062 16.351562 25.289062 18.050781 24.933594 19.605469 C 24.679688 20.703125 23.785156 21.503906 22.707031 21.625 C 20.15625 21.910156 17.570312 21.914062 15.003906 21.910156 C 12.429688 21.910156 9.851562 21.910156 7.300781 21.625 C 6.222656 21.503906 5.324219 20.703125 5.074219 19.605469 C 4.714844 18.050781 4.714844 16.351562 4.714844 14.746094 C 4.714844 13.140625 4.71875 11.4375 5.074219 9.882812 C 5.324219 8.789062 6.21875 7.984375 7.300781 7.863281 C 9.851562 7.578125 12.433594 7.578125 15.003906 7.578125 C 17.570312 7.578125 20.152344 7.578125 22.707031 7.863281 C 23.78125 7.984375 24.679688 8.789062 24.933594 9.882812 C 25.289062 11.4375 25.289062 13.140625 25.289062 14.746094 Z M 25.289062 14.746094 "
                fill-opacity="1" fill-rule="nonzero" />
             <path fill="#e52d27"
-               d="M 12.835938 10.917969 L 12.835938 18.609375 L 18.808594 14.761719 Z M 12.835938 10.917969 " fill-opacity="1"
-               fill-rule="nonzero" />
+               d="M 12.835938 10.917969 L 12.835938 18.609375 L 18.808594 14.761719 Z M 12.835938 10.917969 "
+               fill-opacity="1" fill-rule="nonzero" />
          </svg>
       </a>
       <a href="https://www.facebook.com/groups/" target="_blank" aria-label="Facebook">
@@ -87,18 +87,58 @@
                   <stop offset="90%" stop-color="#285AEB" />
                </linearGradient>
             </defs>
-            <rect x="2" y="2" width="26" height="26" rx="8" fill="url(#instagram-gradient)" stroke="#fff" stroke-width="2" />
+            <rect x="2" y="2" width="26" height="26" rx="8" fill="url(#instagram-gradient)" stroke="#fff"
+               stroke-width="2" />
             <circle cx="15" cy="15" r="6" fill="none" stroke="#fff" stroke-width="2" />
             <circle cx="21" cy="9" r="1.5" fill="#fff" />
          </svg>
       </a>
 
    </div>
+
    <!-- Newsletter Subscription -->
-   <form class="newsletter" onsubmit="event.preventDefault(); alert('Thanks for subscribing!')">
-      <input type="email" placeholder="Enter your email" required />
+   <form class="newsletter" id="newsletter-form">
+      <input type="email" name="email" placeholder="Enter your email" required />
       <button type="submit">Subscribe</button>
    </form>
-   
+
+   <p id="form-message" style="display:none; margin-top:10px; font-size:14px;"></p>
+
+   <script>
+      document.getElementById("newsletter-form").addEventListener("submit", async function (e) {
+         e.preventDefault();
+
+         const form = e.target;
+         const messageBox = document.getElementById("form-message");
+         const email = form.email.value;
+
+         try {
+            const response = await fetch("https://formspree.io/f/mdklzwpw", {
+               method: "POST",
+               headers: { "Content-Type": "application/json" },
+               body: JSON.stringify({ email: email }),
+            });
+
+            if (response.ok) {
+               messageBox.textContent = "🎉 Thanks for subscribing! You’ll now get our latest updates and blog posts.";
+               messageBox.style.color = "white";
+               messageBox.style.display = "block";
+               form.reset();
+            } else {
+               messageBox.textContent = "⚠️ Oops! Something went wrong. Please try again.";
+               messageBox.style.color = "red";
+               messageBox.style.display = "block";
+            }
+         } catch (error) {
+            messageBox.textContent = "❌ Network error. Please try again later.";
+            messageBox.style.color = "red";
+            messageBox.style.display = "block";
+         }
+      });
+   </script>
+
+
+
+
    <p class="footer-text">© 2025 DevViews. All rights reserved.</p>
-   </footer>
+</footer>
