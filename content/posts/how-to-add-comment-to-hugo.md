@@ -6,7 +6,7 @@ date: 2025-08-14T16:34:06+01:00
 draft: false
 image: "/images/commentshugo.webp"
 imageBig: "/images/commentshugo.webp"
-imageAlt: "Developers collaborating on code discussion and problem-solving"
+imageAlt: "Developers collaborating on code"
 categories: ["Web Development", "Hugo", "Comments"]
 authors: ["Godfrey O Omoregie"]
 avatar: "/images/author.webp"
