@@ -1141,3 +1141,28 @@ body {
     position: -webkit-sticky;
   }
 }
+
+
+/* Fix code block overflow */
+pre {
+  overflow-x: auto;
+  padding: 1rem;
+  margin: 1.5rem 0;
+  background: #1f2937;
+  border-radius: 0.5rem;
+  border: 1px solid #374151;
+  max-width: 100%;
+}
+
+/* Ensure code wraps properly */
+pre code {
+  display: block;
+  overflow-x: auto;
+  white-space: pre;
+  word-wrap: normal;
+}
+
+/* Container fix for code blocks */
+.content pre {
+  max-width: 100%;
+}
