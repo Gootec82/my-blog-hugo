@@ -1,0 +1,9 @@
+# Redirect Netlify subdomain to custom domain
+https://devview.netlify.app/*    https://devviews.com/:splat    301!
+
+# Redirect www to non-www
+http://www.devviews.com/*        https://devviews.com/:splat    301!
+https://www.devviews.com/*       https://devviews.com/:splat    301!
+
+# Redirect http to https
+http://devviews.com/*            https://devviews.com/:splat    301!

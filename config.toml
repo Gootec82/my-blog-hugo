@@ -1,4 +1,4 @@
-baseURL = 'https://devview.netlify.app/'  # Added trailing slash - CRITICAL!
+baseURL = "https://devviews.com/"  # Added trailing slash - CRITICAL!
 languageCode = 'en-us'
 title = 'DevViews'
 canonifyURLs = true        # Ensures absolute URLs for SEO
