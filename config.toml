@@ -153,3 +153,9 @@ id = "G-ZQX420PBJT"
 
 [build]
   writeStats = true
+
+  [markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+

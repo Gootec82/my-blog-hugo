@@ -3,6 +3,8 @@ title: "Disclaimer"
 description: "Disclaimer for Godfrey O. Omoregie's blog content and information."
 date: 2025-08-23
 draft: false
+imageBig: "/images/disclaimer_image.webp"
+imageAlt: "Disclaimer image , just showing this text"
 avatar: "/images/author.webp"
 ---
 

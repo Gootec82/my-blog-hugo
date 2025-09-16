@@ -3,6 +3,9 @@ title: "Terms of Service"
 description: "Terms and conditions for using Godfrey O. Omoregie's blog website."
 date: 2025-08-23
 draft: false
+imageBig: "/images/terms_illustration_image.jpg"
+imageAlt: "The image is showing terms & conditions"
+
 avatar: "/images/author.webp"
 ---
 

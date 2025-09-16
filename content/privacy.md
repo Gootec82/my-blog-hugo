@@ -3,12 +3,33 @@ title: "Privacy Policy"
 description: "Privacy policy for Godfrey O. Omoregie's blog. Learn how we collect, use, and protect your data."
 date: 2025-08-23
 draft: false
+imageBig: "/images/privacy_image.webp"
+imageAlt: "Privacy Policy image , a lady pointing at Privacy Policy at the board. where my brand color , orange and blue"
 avatar: "/images/author.webp"
 ---
 
 # Privacy Policy
 
 **Last Updated: {{ .Date.Format "January 2, 2006" }}**
+
+## Our Commitment to Your Privacy
+
+Welcome! At its core, this privacy policy exists for one reason: **to clearly explain how we handle your information and to protect your privacy.** We believe in transparency, so we've written this document to be as clear and straightforward as possible. We are committed to respecting your data and only collecting what is necessary to provide and improve this blog.
+
+Below is a detailed breakdown of our practices. If you have any questions after reading, please don't hesitate to [reach out to me](/contact/).
+
+---
+
+### **A Quick, Plain-English Summary**
+
+*   **We Minimize Data Collection:** We only collect information that is essential for running the blog, like making the comment system work or understanding which articles are popular.
+*   **No Selling of Data:** We **do not and will never sell** your personal information to third parties.
+*   **You're In Control:** You can always request to see what data we have or ask us to delete it by [contacting me directly](/contact/).
+*   **Third-Party Tools:** We use reliable, trusted services like Google Analytics (to see website trends) and Utterances (for comments). Their privacy policies also apply.
+
+*Now, let's get into the full details...*
+
+---
 
 ## 1. Introduction
 
@@ -64,6 +85,8 @@ Depending on your location, you may have the right to:
 - Request deletion of your data
 - Object to processing of your data
 - Data portability
+
+To exercise any of these rights, please [contact us](/contact/) and we will respond promptly.
 
 ## 7. Children's Privacy
 
