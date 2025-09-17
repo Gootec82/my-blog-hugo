@@ -21,7 +21,7 @@ avatar: "/images/author.webp"
     "image": "https://devviews.com/images/author.webp",
     "sameAs": [
       "https://github.com/gootec82",
-      "https://x.com/godfreycode1",
+      "https://x.com/godfreycode1"
     ],
     "description": "Software Developer, Technical Blogger and Problem Solver. Building websites and helping businesses grow online."
   },
