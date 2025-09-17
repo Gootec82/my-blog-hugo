@@ -15,6 +15,11 @@
         "content":  "Read this post about How I Built My First Blog"
     },
     {
+        "title":  "How I Fixed Dns Indexing And Structured Data Errors",
+        "url":  "/posts/how-i-fixed-dns-indexing-and-structured-data-errors/",
+        "content":  "Read this post about How I Fixed Dns Indexing And Structured Data Errors"
+    },
+    {
         "title":  "How To Add Comment To Hugo",
         "url":  "/posts/how-to-add-comment-to-hugo/",
         "content":  "Read this post about How To Add Comment To Hugo"

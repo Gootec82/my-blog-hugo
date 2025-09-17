@@ -83,6 +83,7 @@ Open your Hugo `config.toml` file and make sure it contains:
 ```toml
 baseURL = "https://devviews.com/"
 enableRobotsTXT = true
+```
 
 Why this matters:
 
@@ -115,6 +116,7 @@ file:///C:/Users/USER/Desktop/my-blog-hugo/public/sitemap.xml
 
 You should see all your posts, pages, and tags listed in XML format, like this:
 
+```
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://devviews.com/</loc>
@@ -127,7 +129,7 @@ You should see all your posts, pages, and tags listed in XML format, like this:
     <priority>0.8</priority>
   </url>
 </urlset>
-
+```
 
 ⚠️ If sitemap.xml is missing, check your Hugo disableKinds setting — make sure "sitemap" is not disabled.
 
@@ -154,7 +156,9 @@ Site slow or unreachable	DNS caching / propagation	Wait for global DNS propagati
 Ownership verification failed	TXT record missing	Add Google-provided TXT to Namecheap DNS
 Step 9: Optimize for SEO and AdSense
 
+```
 Ensure each post has a descriptive <title> and <meta description>.
+```
 
 Use canonical URLs to prevent duplicate content issues.
 

@@ -55,6 +55,7 @@ After some digging, I discovered it was a **browser caching issue** combined wit
 to this in my Hugo template:
 
 <link rel="stylesheet" href="/css/style.css?v={{ now.Unix }}">
+```
 
 The {{ now.Unix }} part adds a unique number (a timestamp) to the end of the file URL every time the site builds. This tricks the browser into thinking it's a completely new file, so it always loads the latest version. Problem solved! ✅
 
@@ -84,7 +85,7 @@ While writing this post, I encountered a frustrating layout issue: whenever I ad
 
 Here's what was happening:
 
-Code blocks (<pre> tags) have a default behavior of not wrapping text
+Code blocks ```(<pre> tags)``` have a default behavior of not wrapping text
 
 Long lines of code would extend beyond their containers
 
@@ -94,7 +95,8 @@ The layout became messy and unprofessional-looking
 
 The solution turned out to be surprisingly simple! I added this CSS to my theme:
 
-/* Contained code blocks with proper scrolling */
+
+```/* Contained code blocks with proper scrolling */
 pre {
   overflow-x: auto;
   padding: 1rem;
@@ -112,6 +114,7 @@ pre code {
   white-space: pre;
   word-wrap: normal;
 }
+```
 
 What this fix does:
 
