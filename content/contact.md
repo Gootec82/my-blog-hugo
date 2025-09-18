@@ -31,15 +31,16 @@ I specialize in turning concepts into robust, secure, and user-friendly digital 
 
 ### 📧 Send Me an Email
 The best way to get a detailed conversation started is via email. I strive to respond to all serious inquiries within 24 hours.
-**Email:** [your-email@domain.com](mailto:your-email@domain.com) *(Please replace this with your actual email address)*
+**Email:** [godfreyomoregie1@gmail.com](mailto:godfreyomoregie1@gmail.com) *(Please replace this with your actual email address)*
 
 ### 💼 Connect on LinkedIn
-For professional networking and a glimpse into my experience and skills, connect with me on LinkedIn.
-**LinkedIn:** [Your LinkedIn Profile URL] *(Please add your actual LinkedIn URL)*
+For professional networking and a glimpse into my experience and skills, connect with me on LinkedIn.  
+**LinkedIn:** [https://www.linkedin.com/in/godfrey-o-omoregie-98723736b/](https://www.linkedin.com/in/godfrey-o-omoregie-98723736b/)
 
 ### 🐙 Check My Code on GitHub
-Want to see my work firsthand? Explore my projects and contributions on GitHub.
-**GitHub:** [Your GitHub Profile URL] *(Please add your actual GitHub URL)*
+Want to see my work firsthand? Explore my projects and contributions on GitHub.  
+**GitHub:** [https://github.com/Gootec82](https://github.com/Gootec82)
+ 
 
 ---
 
