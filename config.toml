@@ -42,12 +42,12 @@ enableRobotsTXT = true
 
   [[params.social]]
     name = "Twitter"
-    url = "https://twitter.com/codewithgodfre"
+    url = "https://twitter.com/godfreycode1"
     icon = "twitter"
 
   [[params.social]]
     name = "Instagram"
-    url = "https://instagram.com/your_instagram"
+    url = "https://instagram.com/godfreycode1"
     icon = "instagram"
 
   # === Utterances Comments Integration ===
