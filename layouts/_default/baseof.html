@@ -34,13 +34,11 @@
 
     {{ if and (ne .RelPermalink "/categories/") (hasPrefix .RelPermalink "/categories/") }}
     <meta name="robots" content="noindex">
-    <!-- DEBUG: RelPermalink = {{ .RelPermalink }} -->
-    <!-- DEBUG: Condition 1 (not /authors/) = {{ ne .RelPermalink "/authors/" }} -->
-    <!-- DEBUG: Condition 2 (starts with /authors/) = {{ hasPrefix .RelPermalink "/authors/" }} -->
-    <!-- DEBUG: Combined condition = {{ and (ne .RelPermalink "/authors/") (hasPrefix .RelPermalink "/authors/") }} -->
-    
-    {{ else if and (ne .RelPermalink "/authors/") (hasPrefix .RelPermalink "/authors/") }}
-    <meta name="robots" content="noindex">
+{{ if in .RelPermalink "/authors/" }}
+{{ if ne .RelPermalink "/authors/" }}
+<meta name="robots" content="noindex">
+{{ end }}
+{{ end }}
     {{ else if and (ne .RelPermalink "/tags/") (hasPrefix .RelPermalink "/tags/") }}
     <meta name="robots" content="noindex">
     {{ else }}
