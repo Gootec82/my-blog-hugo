@@ -34,7 +34,7 @@
 
     {{ if and (ne .RelPermalink "/categories/") (hasPrefix .RelPermalink "/categories/") }}
     <meta name="robots" content="noindex">
-    {{ else if and (ne .RelPermalink "/authors/") (hasPrefix .RelPermalink "/authors/") }}
+    {{ else if and (ne .RelPermalink "/authors/") (findRE "^/authors/.+" .RelPermalink) }}
     <meta name="robots" content="noindex">
     {{ else if and (ne .RelPermalink "/tags/") (hasPrefix .RelPermalink "/tags/") }}
     <meta name="robots" content="noindex">
