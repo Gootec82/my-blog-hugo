@@ -32,18 +32,16 @@
         content="{{ with .Params.description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
     <meta name="twitter:image" content="{{ .Site.BaseURL }}images/devviews-og.png">
 
-    {{ if and (ne .RelPermalink "/categories/") (hasPrefix .RelPermalink "/categories/") }}
-    <meta name="robots" content="noindex">
-
-    {{ else if and (ne .RelPermalink "/tags/") (hasPrefix .RelPermalink "/tags/") }}
+    {{ $shouldNoindex := false }}
+    {{ if and (ne .RelPermalink "/categories/") (hasPrefix .RelPermalink "/categories/") }}{{ $shouldNoindex = true }}{{ end
+    }}
+    {{ if and (ne .RelPermalink "/authors/") (hasPrefix .RelPermalink "/authors/") }}{{ $shouldNoindex = true }}{{ end }}
+    {{ if and (ne .RelPermalink "/tags/") (hasPrefix .RelPermalink "/tags/") }}{{ $shouldNoindex = true }}{{ end }}
+    
+    {{ if $shouldNoindex }}
     <meta name="robots" content="noindex">
     {{ else }}
     <meta name="robots" content="index, follow">
-    {{ end }}
-    {{ if in .Permalink "/authors/" }}
-    {{ if ne .Permalink "https://devviews.com/authors/" }}
-    <meta name="robots" content="noindex">
-    {{ end }}
     {{ end }}
 
     <!-- Favicon -->
