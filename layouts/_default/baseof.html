@@ -33,16 +33,26 @@
     <meta name="twitter:image" content="{{ .Site.BaseURL }}images/devviews-og.png">
 
     {{ $shouldNoindex := false }}
-    {{ if and (ne .RelPermalink "/categories/") (hasPrefix .RelPermalink "/categories/") }}{{ $shouldNoindex = true }}{{ end
-    }}
-    {{ if and (ne .RelPermalink "/authors/") (hasPrefix .RelPermalink "/authors/") }}{{ $shouldNoindex = true }}{{ end }}
-    {{ if and (ne .RelPermalink "/tags/") (hasPrefix .RelPermalink "/tags/") }}{{ $shouldNoindex = true }}{{ end }}
+    {{ $url := strings.TrimSuffix "/" .RelPermalink }}
+    
+    {{ if hasPrefix $url "/categories" }}
+    {{ $shouldNoindex = true }}
+    {{ end }}
+    
+    {{ if hasPrefix $url "/authors" }}
+    {{ $shouldNoindex = true }}
+    {{ end }}
+    
+    {{ if hasPrefix $url "/tags" }}
+    {{ $shouldNoindex = true }}
+    {{ end }}
     
     {{ if $shouldNoindex }}
     <meta name="robots" content="noindex">
     {{ else }}
     <meta name="robots" content="index, follow">
     {{ end }}
+
 
     <!-- Favicon -->
     <link rel="icon"
