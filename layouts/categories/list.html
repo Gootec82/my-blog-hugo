@@ -1,10 +1,9 @@
 {{ define "main" }}
-<!-- Set noindex for all taxonomy list pages except the main index pages -->
-{{ if or
-(and (ne .RelPermalink "/categories/") (hasPrefix .RelPermalink "/categories/"))
-(and (ne .RelPermalink "/authors/") (hasPrefix .RelPermalink "/authors/"))
-(and (ne .RelPermalink "/tags/") (hasPrefix .RelPermalink "/tags/"))
-}}
+{{ if and (ne .RelPermalink "/categories/") (hasPrefix .RelPermalink "/categories/") }}
+<meta name="robots" content="noindex">
+{{ else if and (ne .RelPermalink "/authors/") (hasPrefix .RelPermalink "/authors/") }}
+<meta name="robots" content="noindex">
+{{ else if and (ne .RelPermalink "/tags/") (hasPrefix .RelPermalink "/tags/") }}
 <meta name="robots" content="noindex">
 {{ end }}
 
