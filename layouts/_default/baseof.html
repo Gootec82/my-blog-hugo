@@ -34,15 +34,16 @@
 
     {{ if and (ne .RelPermalink "/categories/") (hasPrefix .RelPermalink "/categories/") }}
     <meta name="robots" content="noindex">
-{{ if in .RelPermalink "/authors/" }}
-{{ if ne .RelPermalink "/authors/" }}
-<meta name="robots" content="noindex">
-{{ end }}
-{{ end }}
+
     {{ else if and (ne .RelPermalink "/tags/") (hasPrefix .RelPermalink "/tags/") }}
     <meta name="robots" content="noindex">
     {{ else }}
     <meta name="robots" content="index, follow">
+    {{ end }}
+    {{ if in .Permalink "/authors/" }}
+    {{ if ne .Permalink "https://devviews.com/authors/" }}
+    <meta name="robots" content="noindex">
+    {{ end }}
     {{ end }}
 
     <!-- Favicon -->
