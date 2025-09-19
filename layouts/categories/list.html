@@ -1,6 +1,11 @@
 {{ define "main" }}
+<!-- Add the noindex front matter for individual category pages -->
+{{ if ne .RelPermalink "/categories/" }}
+{{ .Scratch.Set "noindex" true }} <!-- This tells Hugo to add a noindex meta tag -->
+{{ end }}
+
 {{ if eq .RelPermalink "/categories/" }}
-<!-- CATEGORIES INDEX PAGE -->
+<!-- CATEGORIES INDEX PAGE (MAIN /categories/ page) - WILL STAY INDEXABLE -->
 <div class="categories-container">
     <h1>Blog Categories</h1>
     <div class="categories-grid">
@@ -13,7 +18,7 @@
     </div>
 </div>
 {{ else }}
-<!-- INDIVIDUAL CATEGORY PAGE -->
+<!-- INDIVIDUAL CATEGORY PAGE (e.g., /categories/adsense/) - WILL BE NOINDEX -->
 <div class="list">
     <div class="category-header">
         <h1>Category: {{ .Title }}</h1>
