@@ -1,7 +1,11 @@
 {{ define "main" }}
-<!-- Add the noindex front matter for individual category pages -->
-{{ if ne .RelPermalink "/categories/" }}
-{{ .Scratch.Set "noindex" true }} <!-- This tells Hugo to add a noindex meta tag -->
+<!-- Set noindex for all taxonomy list pages except the main index pages -->
+{{ if or
+(and (ne .RelPermalink "/categories/") (hasPrefix .RelPermalink "/categories/"))
+(and (ne .RelPermalink "/authors/") (hasPrefix .RelPermalink "/authors/"))
+(and (ne .RelPermalink "/tags/") (hasPrefix .RelPermalink "/tags/"))
+}}
+{{ .Scratch.Set "noindex" true }}
 {{ end }}
 
 {{ if eq .RelPermalink "/categories/" }}
