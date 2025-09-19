@@ -5,7 +5,7 @@
 (and (ne .RelPermalink "/authors/") (hasPrefix .RelPermalink "/authors/"))
 (and (ne .RelPermalink "/tags/") (hasPrefix .RelPermalink "/tags/"))
 }}
-{{ .Scratch.Set "noindex" true }}
+<meta name="robots" content="noindex">
 {{ end }}
 
 {{ if eq .RelPermalink "/categories/" }}
