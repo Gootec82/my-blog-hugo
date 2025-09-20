@@ -15,7 +15,14 @@
                 <a href="{{.Permalink}}" class="singleCategory">{{ .Name }}</a>
                 {{ end }}
             </div>
-            <time datetime="{{ .Date.Format " 2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+            <time datetime="{{ .Date.Format " 2006-01-02" }}">
+                {{ .Date.Format "January 2, 2006" }}
+            </time>
+            <span class="reading-time">
+                🕒 <span class="reading-time-text">{{ .ReadingTime }} min read</span>
+            </span>
+
+
         </div>
         <!-- UPDATED IMAGE WITH BETTER ALT TEXT -->
         <img src="{{ .Params.imageBig }}" alt="{{ .Params.imageAlt | default .Title }}" class="singleHeadImg">
