@@ -28,5 +28,10 @@
         "title":  "How To Add Google Analytics To Hugo",
         "url":  "/posts/how-to-add-google-analytics-to-hugo/",
         "content":  "Read this post about How To Add Google Analytics To Hugo"
+    },
+    {
+        "title":  "Noindex Hugo Tag Author Pages",
+        "url":  "/posts/noindex-hugo-tag-author-pages/",
+        "content":  "Read this post about Noindex Hugo Tag Author Pages"
     }
 ]
