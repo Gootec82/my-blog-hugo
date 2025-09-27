@@ -4,9 +4,35 @@ description: "Meet Godfrey O. Omoregie - Software Developer, FinTech Explorer, F
 date: 2025-08-23
 draft: false
 imageBig: "/images/about_us.webp"
-imageAlt: "About Godfrey O. Omoregie"
+imageAlt: "About-us image, green color"
 avatar: "/images/author.webp"
 ---
+
+<!-- JSON-LD: AboutPage Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "mainEntity": {
+    "@type": "Person",
+    "name": "Godfrey O. Omoregie",
+    "jobTitle": "Software Developer & Technical Blogger",
+    "url": "https://devviews.com/about",
+    "image": "https://devviews.com/images/author.webp",
+    "sameAs": [
+      "https://github.com/gootec82",
+      "https://x.com/godfreycode1"
+    ],
+    "description": "Software Developer, Technical Blogger and Problem Solver. Building websites and helping businesses grow online."
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "DevViews",
+    "url": "https://devviews.com",
+    "logo": "https://devviews.com/images/logo.png"
+  }
+}
+</script>
 
 <div class="about-hero">
     <div class="about-profile">
