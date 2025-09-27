@@ -6,6 +6,7 @@ description: "Learn exactly how I connected my custom domain to my Hugo blog on 
 tags: ["Hugo", "Netlify", "Custom Domain", "SEO", "AdSense"]
 categories: ["web-development"]
 draft: false
+image: "/images/analytics-hugo-lg.jpg"
 imageBig: "/images/analytics-hugo-lg.jpg"
 imageAlt: " A domain image showing .com"
 avatar: "/images/author.webp"

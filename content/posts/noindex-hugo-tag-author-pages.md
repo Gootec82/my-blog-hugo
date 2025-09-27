@@ -4,6 +4,7 @@ draft: false
 title: "Why I Noindexed My Tag and Author Pages in Hugo — A Step-by-Step SEO Fix"
 slug: "noindex-hugo-tag-author-pages"
 description: "Why I Noindexed my tag and author pages in Hugo, how I implemented the fix, and the SEO benefits."
+image: "/images/noindex-hugo-fix.webp"
 imageBig: "/images/noindex-hugo-fix.webp"
 imageAlt: "Noindex SEO fix applied to Hugo blog tag and author pages in Google Search Console"
 tags: ["Hugo", "general"]

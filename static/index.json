@@ -1,13 +1,13 @@
 ﻿[
     {
-        "title":  "Add Search To Hugo",
-        "url":  "/posts/add-search-to-hugo/",
-        "content":  "Read this post about Add Search To Hugo"
-    },
-    {
         "title":  "Connect Domain Hugo Netlify",
         "url":  "/posts/connect-domain-hugo-netlify/",
         "content":  "Read this post about Connect Domain Hugo Netlify"
+    },
+    {
+        "title":  "Developer Skills Forex Trader",
+        "url":  "/posts/developer-skills-forex-trader/",
+        "content":  "Read this post about Developer Skills Forex Trader"
     },
     {
         "title":  "How I Built My First Blog",
@@ -28,6 +28,11 @@
         "title":  "How To Add Google Analytics To Hugo",
         "url":  "/posts/how-to-add-google-analytics-to-hugo/",
         "content":  "Read this post about How To Add Google Analytics To Hugo"
+    },
+    {
+        "title":  "How To Add Search To Hugo Blog",
+        "url":  "/posts/how-to-add-search-to-hugo-blog/",
+        "content":  "Read this post about How To Add Search To Hugo Blog"
     },
     {
         "title":  "Noindex Hugo Tag Author Pages",
