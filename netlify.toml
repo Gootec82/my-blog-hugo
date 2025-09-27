@@ -1,0 +1,18 @@
+[build]
+  publish = "public"
+  command = "hugo --gc --minify"
+
+[build.environment]
+  HUGO_VERSION = "0.148.2"
+
+[[redirects]]
+  from = "http://devviews.com/*"
+  to = "https://devviews.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.devviews.com/*"
+  to = "https://devviews.com/:splat"
+  status = 301
+  force = true
