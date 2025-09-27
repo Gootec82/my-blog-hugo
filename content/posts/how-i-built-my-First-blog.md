@@ -6,7 +6,7 @@ description: "The story of how I built my developer blog, DevView, from scratch 
 image: "/images/how_i_built_myhugo_image.webp"
 imageBig: "/images/how_i_built_myhugo_image.webp"
 imageAlt: "A screenshot of my Hugo blog showing the clean design and footer"
-categories: ["tutorial", "general", "beginners", "hugo" ]
+categories: ["Web Development"]
 tags: ["hugo", "netlify", "ai", "webdev", "javascript", "static-site", "blogging"]
 authors: ["Godfrey O Omoregie"]
 avatar: "/images/author.webp"

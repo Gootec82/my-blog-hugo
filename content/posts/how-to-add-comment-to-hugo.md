@@ -7,7 +7,7 @@ draft: false
 image: "/images/utterances-comments-hugo-blog.webp"
 imageBig: "/images/utterances-comments-hugo-blog.webp"
 imageAlt: "Hugo blog with comments section implementation"
-categories: ["Web Development", "Hugo", "general"]
+categories: ["Web Development"]
 authors: ["Godfrey O Omoregie"]
 avatar: "/images/author.webp"
 ---

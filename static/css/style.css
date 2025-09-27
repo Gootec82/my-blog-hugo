@@ -269,13 +269,13 @@ a:hover {
 }
 
 /* ===== RIGHT SIDEBAR ===== */
-.singleRightBar {
-  flex: 1;
-  max-width: 300px;
-  position: sticky;
-  top: 120px;
-  height: fit-content;
-  align-self: flex-start;
+.singleContent {
+  flex: 3;
+  min-width: 0;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  line-height: 1.7;
 }
 
 .rightBarImg {

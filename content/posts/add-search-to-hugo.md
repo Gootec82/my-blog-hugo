@@ -7,7 +7,7 @@ description: "Learn how I added a fast, SEO-friendly search bar to my Hugo blog 
 image: "/images/searchhugo.webp"
 imageBig: "/images/searchhugo.webp" 
 imageAlt: "Search bar implementation on Hugo blog - code example and workflow"
-categories: ["general", "tutorial", "AI", "web-development"]
+categories: ["web-development"]
 tags: ["hugo", "search", "tutorial", "blog", "seo"]
 authors: ["Godfrey O Omoregie"]
 avatar: "/images/author.webp"

@@ -3,7 +3,7 @@ title: "How to Add Google Analytics to Hugo"
 description: "Step-by-step guide to implementing Google Analytics in Hugo with GDPR-compliant cookie consent banner. Complete tutorial with code examples."
 date: 2025-08-24
 author: Godfrey O. Omoregie
-categories: ["Web Development", "Hugo", "general"]
+categories: ["Web Development"]
 draft: false
 image: "/images/analytics-hugo.webp"
 imageBig: "/images/analytics-hugo.webp"
