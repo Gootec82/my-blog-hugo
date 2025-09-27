@@ -4,7 +4,7 @@ slug: "connect-domain-hugo-netlify"
 date: 2025-09-08T18:00:00+01:00
 description: "Learn exactly how I connected my custom domain to my Hugo blog on Netlify, fixed common errors, enabled SSL, and prepared my site for Google Search Console and AdSense approval."
 tags: ["Hugo", "Netlify", "Custom Domain", "SEO", "AdSense"]
-categories: ["Web Development"]
+categories: ["web-development"]
 draft: false
 imageBig: "/images/analytics-hugo-lg.jpg"
 imageAlt: " A domain image showing .com"

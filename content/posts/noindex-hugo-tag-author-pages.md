@@ -7,7 +7,7 @@ description: "Why I Noindexed my tag and author pages in Hugo, how I implemented
 imageBig: "/images/noindex-hugo-fix.webp"
 imageAlt: "Noindex SEO fix applied to Hugo blog tag and author pages in Google Search Console"
 tags: ["Hugo", "general"]
-categories: ["Web Development"]
+categories: ["web-development"]
 authors: ["Godfrey O Omoregie"]
 avatar: "/images/author.webp"
 ---
