@@ -3,10 +3,10 @@ title: "How I Built My First Blog"
 date: 2025-09-01T08:00:00+00:00
 draft: false
 description: "The story of how I built my developer blog, DevView, from scratch using Hugo, Netlify, and AI as my co-pilot."
-image: "/images/blogimage.webp"
+image: "/images/how_i_built_myhugo_image.webp"
 imageBig: "/images/how_i_built_myhugo_image.webp"
 imageAlt: "A screenshot of my Hugo blog showing the clean design and footer"
-categories: ["webdev", "tutorial", "general", "beginners", "hugo", ]
+categories: ["tutorial", "general", "beginners", "hugo" ]
 tags: ["hugo", "netlify", "ai", "webdev", "javascript", "static-site", "blogging"]
 authors: ["Godfrey O Omoregie"]
 avatar: "/images/author.webp"

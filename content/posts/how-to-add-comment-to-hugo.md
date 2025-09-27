@@ -5,9 +5,9 @@ description: "How I implemented a GitHub-powered comment system on my Hugo blog 
 date: 2025-08-14T16:34:06+01:00
 draft: false
 image: "/images/utterances-comments-hugo-blog.webp"
-imageBig: "/images/commentshugo.webp"
+imageBig: "/images/utterances-comments-hugo-blog.webp"
 imageAlt: "Hugo blog with comments section implementation"
-categories: ["Web Development", "Hugo", "Comments"]
+categories: ["Web Development", "Hugo", "general"]
 authors: ["Godfrey O Omoregie"]
 avatar: "/images/author.webp"
 ---

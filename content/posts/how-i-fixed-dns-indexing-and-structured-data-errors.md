@@ -7,7 +7,7 @@ description: "Step-by-step solutions to DNS errors, Google indexing issues, and 
 image: "/images/blog-troubleshooting.png"
 imageBig: "/images/blog-troubleshooting.png"
 imageAlt: "developer fixing blog errors DNS indexing structured data"
-categories: ["Web Development", "hugo"]
+categories: ["Web Development", "general", "hugo"]
 tags: ["dns", "google-search-console", "seo", "hugo", "netlify"]
 authors: ["Godfrey O Omoregie"]
 avatar: "/images/author.webp"

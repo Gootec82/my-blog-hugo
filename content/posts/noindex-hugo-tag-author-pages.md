@@ -6,8 +6,8 @@ slug: "noindex-hugo-tag-author-pages"
 description: "Why I Noindexed my tag and author pages in Hugo, how I implemented the fix, and the SEO benefits."
 imageBig: "/images/noindex-hugo-fix.webp"
 imageAlt: "Noindex SEO fix applied to Hugo blog tag and author pages in Google Search Console"
-tags: ["Hugo", "SEO", "noindex", "Google Search Console"]
-categories: ["SEO", "tutorial", "Web Development"]
+tags: ["Hugo", "general"]
+categories: ["general", "tutorial", "Web Development"]
 authors: ["Godfrey O Omoregie"]
 avatar: "/images/author.webp"
 ---
