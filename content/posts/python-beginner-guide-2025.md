@@ -79,8 +79,9 @@ If you see this - congratulations! 🎉 You now have Python running on your comp
 ## What Makes Python So Special? (With Simple Analogies)
 
 ### 1. Readability: Like Writing English
-```
+
 # Instead of confusing symbols, Python reads naturally
+```python
 if user_is_logged_in and has_valid_subscription:
     show_premium_content()
 else:
@@ -105,12 +106,13 @@ Variables: Giving Data Names
 
 
 # Variables are like labeled boxes where we store information
+```
 name = "Vivian"
 age = 28
 favorite_food = "pizza"
 
 print(f"Meet {name}, she's {age} and loves {favorite_food}!")
-
+```
 
 Simple Loops: Making Repetition Easy
 
