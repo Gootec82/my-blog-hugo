@@ -9,6 +9,7 @@ draft: false
 image: "/images/analytics-hugo-lg.jpg"
 imageBig: "/images/analytics-hugo-lg.jpg"
 imageAlt: " A domain image showing .com"
+authors: ["Godfrey O Omoregie"]
 avatar: "/images/author.webp"
 ---
 

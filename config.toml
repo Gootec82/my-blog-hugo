@@ -1,8 +1,9 @@
-baseURL = "https://devviews.com/"  # Added trailing slash - CRITICAL!
+baseURL = "https://devviews.com/"
 languageCode = 'en-us'
 title = 'DevViews'
-canonifyURLs = true        # Ensures absolute URLs for SEO
-relativeURLs = false      # Needed for Netlify deployment
+canonifyURLs = true
+relativeURLs = false
+removePathTrailingSlash = false
 enableRobotsTXT = true
 
 [pagination]
@@ -13,10 +14,7 @@ enableRobotsTXT = true
   dateFormat = 'Jan 2, 2006'
   mainSections = ['posts']
   defaultTheme = 'light'
-  search = true
   assetsVersion = "1.0.1"
-  searchInclude = ["title", "url", "categories", "tags", "description", "content"]
-  searchExclude = ["draft", "private"]
 
   # === Author Information ===
   [params.author]
@@ -25,7 +23,7 @@ enableRobotsTXT = true
     avatar = "/images/author.webp"
     bio = "Software Developer & Technical Problem Solver"
     github = "gootec82"
-    linkedin = "https://linkedin.com/in/https://www.linkedin.com/in/godfrey-o-omoregie-98723736b/"
+    linkedin = "https://www.linkedin.com/in/godfrey-o-omoregie-98723736b/"
     twitter = "https://twitter.com/godfreycode1"
     instagram = "https://instagram.com/godfreycode1"
 
@@ -37,7 +35,7 @@ enableRobotsTXT = true
 
   [[params.social]]
     name = "LinkedIn"
-    url = "https://linkedin.com/in/yourprofile"
+    url = "https://www.linkedin.com/in/godfrey-o-omoregie-98723736b/"
     icon = "linkedin"
 
   [[params.social]]
@@ -50,19 +48,19 @@ enableRobotsTXT = true
     url = "https://instagram.com/godfreycode1"
     icon = "instagram"
 
-  # === Utterances Comments Integration ===
+  # === Utterances Comments ===
   [params.utterances]
     enable = true
     repo = "gootec82/my-blog-hugo"
     issueTerm = "title"
     theme = "github-light"
 
-  # === Open Graph & Twitter Card SEO === ✅
+  # === Open Graph ===
   [params.opengraph]
     enable = true
     title = "DevViews – A Modern Tech Blog for Developers"
     description = "Stay updated with the latest in technology, coding tutorials, tips, and insights for developers."
-    image = "/images/devviews-og.png"  # <-- UPDATED OG IMAGE PATH ✅
+    image = "/images/devviews-og.png"
     type = "website"
     twitterCard = "summary_large_image"
     twitterSite = "@godfreycode1"
@@ -78,24 +76,8 @@ enableRobotsTXT = true
 
 [taxonomies]
   category = 'categories'
-  author = 'authors'
   tag = 'tags'
-
-[mediaTypes]
-  [mediaTypes."application/json"]
-    suffixes = ["json"]
-
-[outputFormats]
-  [outputFormats.JSON]
-    mediaType = "application/json"
-    baseName = "index"
-    isPlainText = true
-    notAlternative = true
-
-[outputs]
-  home = ["HTML", "RSS", "JSON"]
-  section = ["HTML", "JSON"]
-  page = ["HTML"]
+  author = 'authors'
 
 [menu]
   [[menu.main]]
@@ -117,16 +99,6 @@ enableRobotsTXT = true
     name = "Contact"
     url = "/contact/"
     weight = 4
-
-  [[menu.main]]
-    name = "Privacy"
-    url = "/privacy/"
-    weight = 50
-
-  [[menu.main]]
-    name = "Terms"
-    url = "/terms/"
-    weight = 51
 
   [[menu.footer]]
     name = "Privacy Policy"
@@ -151,11 +123,7 @@ enableRobotsTXT = true
 [services.googleAnalytics]
 id = "G-ZQX420PBJT"
 
-[build]
-  writeStats = true
-
-  [markup]
+[markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
-

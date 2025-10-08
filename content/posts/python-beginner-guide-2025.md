@@ -9,6 +9,7 @@ draft: false
 image: "/images/python_beginner_image.webp"
 imageBig: "/images/python_beginner_image.webp"
 imageAlt: "A person holding a sticky note with the word Python written on it, symbolizing learning Python programming in 2025"
+authors: ["Godfrey O Omoregie"]
 avatar: "/images/author.webp"
 ---
 

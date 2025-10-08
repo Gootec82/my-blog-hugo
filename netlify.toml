@@ -5,6 +5,7 @@
 [build.environment]
   HUGO_VERSION = "0.148.2"
 
+# KEEP your existing redirects
 [[redirects]]
   from = "http://devviews.com/*"
   to = "https://devviews.com/:splat"
@@ -16,3 +17,26 @@
   to = "https://devviews.com/:splat"
   status = 301
   force = true
+
+# ADD THESE NEW REDIRECTS for trailing slash consistency
+[[redirects]]
+  from = "/categories/*"
+  to = "/categories/:splat/"
+  status = 301
+
+[[redirects]]
+  from = "/authors/*"
+  to = "/authors/:splat/"
+  status = 301
+
+[[redirects]]
+  from = "/tags/*"
+  to = "/tags/:splat/"
+  status = 301
+
+# Optional: For other pages that might have trailing slash issues
+[[redirects]]
+  from = "/*"
+  to = "/:splat/"
+  status = 301
+  conditions = {TrailingSlash = false}

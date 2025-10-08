@@ -9,6 +9,7 @@ tags: ["AI tools", "developers", "coding assistants", "productivity", "2025"]
 image: "/images/illustration_ai_coding_image.webp"
 imageBig: "/images/illustration_ai_coding_image.webp"
 imageAlt: " Illustration of AI coding tools in 2025, showing a computer with code, AI brain icon, and developer-related graphics"
+authors: ["Godfrey O Omoregie"]
 avatar: "/images/author.webp"
 ---
 

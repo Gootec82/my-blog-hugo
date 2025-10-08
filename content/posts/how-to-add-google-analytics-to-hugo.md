@@ -8,6 +8,7 @@ draft: false
 image: "/images/analytics-hugo.webp"
 imageBig: "/images/analytics-hugo.webp"
 imageAlt: "Google Analytics dashboard showing visitor statistics for a Hugo blog"
+authors: ["Godfrey O Omoregie"]
 avatar: "/images/author.webp"
 ---
 

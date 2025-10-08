@@ -9,6 +9,7 @@ draft: false
 image: "/images/trading-dashboard-screenshot.webp"
 imageBig: "/images/trading-dashboard-screenshot.webp"
 imageAlt: "Modern financial trading dashboard interface with charts and analytics"
+authors: ["Godfrey O Omoregie"]
 avatar: "/images/author.webp"
 ---
 
