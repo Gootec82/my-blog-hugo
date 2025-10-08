@@ -15,7 +15,7 @@ avatar: "/images/author.webp"
 
 Hey there! Welcome back to our Python journey. 👋
 
-Remember in our last [post when we touched on variables like `name = "Vivian"`?](https://devviews.com/categories/python/) Well, today we're going to dive deep into **variables and data types** - the fundamental building blocks of every Python program you'll ever write.
+Remember in our last [post when we touched on variables like `name = "Vivian"`?](https://devviews.com/posts/python-variables-data-types/) Well, today we're going to dive deep into **variables and data types** - the fundamental building blocks of every Python program you'll ever write.
 
 I know "data types" might sound technical and boring, but stick with me. Think of variables and data types like the **different types of containers in your kitchen**:
 
