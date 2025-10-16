@@ -4,7 +4,7 @@ slug: "what-is-ai-artificial-intelligence-developers"
 date: 2025-10-16
 description: "Learn what Artificial Intelligence really means for developers. Clear explanations of AI, machine learning, and neural networks with practical examples you can understand."
 tags: ["artificial intelligence", "AI for developers", "machine learning", "what is AI", "AI basics"]
-categories: ["AI"]
+categories: ["ai-tools"]
 draft: false
 image: "/images/what-is-ai.webp"
 imageBig: "/images/what-is-ai.webp"
