@@ -40,6 +40,16 @@
         "content":  "Read this post about How To Add Search To Hugo Blog"
     },
     {
+        "title":  "Hugo Shortcodes Custom Components",
+        "url":  "/posts/hugo-shortcodes-custom-components/",
+        "content":  "Read this post about Hugo Shortcodes Custom Components"
+    },
+    {
+        "title":  "Machine Learning Vs Deep Learning",
+        "url":  "/posts/machine-learning-vs-deep-learning/",
+        "content":  "Read this post about Machine Learning Vs Deep Learning"
+    },
+    {
         "title":  "Noindex Hugo Tag Author Pages",
         "url":  "/posts/noindex-hugo-tag-author-pages/",
         "content":  "Read this post about Noindex Hugo Tag Author Pages"
