@@ -3,7 +3,7 @@ title: "How My Developer Skills Made Me a Better Forex Trader"
 slug: "developer-skills-forex-trader"
 date: 2025-09-27
 description: "Discover how my web development background became my secret weapon in forex trading - from automated systems to data-driven decisions."
-categories: ["fintech"]
+categories: ["Fintech"]
 tags: ["forex", "python", "automation", "trading-bots", "web-development"]
 draft: false
 image: "/images/trading-dashboard-screenshot.webp"

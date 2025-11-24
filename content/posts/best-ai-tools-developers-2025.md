@@ -4,7 +4,7 @@ slug: "best-ai-tools-developers-2025"
 date: 2025-10-02T10:00:00+00:00
 draft: false
 description: "Discover the 10 best AI tools for developers in 2025. From GitHub Copilot to ChatGPT, these AI coding assistants can boost productivity, simplify debugging, and speed up development."
-categories: ["AI-Tools"]
+categories: ["AI"]
 tags: ["AI tools", "developers", "coding assistants", "productivity"]
 image: "/images/illustration_ai_coding_image.webp"
 imageBig: "/images/illustration_ai_coding_image.webp"
