@@ -4,7 +4,7 @@ slug: "python-functions-tutorial"
 date: 2025-11-24
 description: "Master Python functions to write cleaner, more efficient code. Learn how to create reusable code blocks with parameters, return values, and practical examples."
 tags: ["python functions", "python programming", "code reuse", "python tutorial", "beginner python"]
-categories: ["Programming", "Python"]
+categories: ["Python"]
 draft: false
 image: "/images/python-functions.webp"
 imagebig: "/images/python-functions.webp"
