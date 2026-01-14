@@ -75,6 +75,11 @@
         "content":  "Read this post about Python Budget Tracker Tutorial"
     },
     {
+        "title":  "Python Data Structures Lists Tuples Dictionaries",
+        "url":  "/posts/python-data-structures-lists-tuples-dictionaries/",
+        "content":  "Read this post about Python Data Structures Lists Tuples Dictionaries"
+    },
+    {
         "title":  "Python Functions Tutorial",
         "url":  "/posts/python-functions-tutorial/",
         "content":  "Read this post about Python Functions Tutorial"
