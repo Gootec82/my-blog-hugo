@@ -4,7 +4,7 @@ slug: "image-recognition-beginners-python"
 date: 2026-01-27
 description: "Learn image recognition with Python using simple examples. Build a system that identifies objects in photos with step-by-step tutorials and real projects."
 tags: ["image recognition", "computer vision", "python ai", "machine learning", "opencv"]
-categories: ["AI", "Python", "Computer Vision"]
+categories: ["AI", "Python"]
 draft: false
 image: "/images/image-recognition-python.webp"
 imageBig: "/images/image-recognition-python.webp"
