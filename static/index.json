@@ -85,6 +85,11 @@
         "content":  "Read this post about Python Data Structures Lists Tuples Dictionaries"
     },
     {
+        "title":  "Python Error Handling Try Except",
+        "url":  "/posts/python-error-handling-try-except/",
+        "content":  "Read this post about Python Error Handling Try Except"
+    },
+    {
         "title":  "Python Functions Tutorial",
         "url":  "/posts/python-functions-tutorial/",
         "content":  "Read this post about Python Functions Tutorial"
