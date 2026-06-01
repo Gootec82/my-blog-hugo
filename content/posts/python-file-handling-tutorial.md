@@ -1,7 +1,7 @@
 ---
 title: "Python File Handling: Read, Write, and Manage Files Like a Pro"
 slug: "python-file-handling-tutorial"
-date: 2026-05-03
+date: 2026-06-01
 description: "Master Python file operations with practical examples. Learn to read, write, and manage files, plus build a real notes application that saves your data."
 tags: ["python file handling", "read write files", "python csv", "json python", "file management"]
 categories: ["Programming", "Python"]
