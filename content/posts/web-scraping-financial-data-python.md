@@ -4,7 +4,7 @@ slug: "web-scraping-financial-data-python"
 date: 2026-07-05
 description: "Learn to ethically scrape financial data from the web using Python. Build a stock price monitor with BeautifulSoup while respecting websites and following best practices."
 tags: ["web scraping", "financial data", "python web scraping", "beautifulsoup", "stock market data"]
-categories: ["FinTech", "Python", "Data Science"]
+categories: ["FinTech", "Python"]
 draft: false
 imageBig: "/images/financial-web-scraping.webp"
 image: "/images/financial-web-scraping.webp"
